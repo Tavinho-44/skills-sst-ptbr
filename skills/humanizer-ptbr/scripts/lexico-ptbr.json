@@ -193,7 +193,7 @@
   },
   {
    "find": "alavanca",
-   "replace": "aumenta",
+   "replace": null,
    "family": "verbos"
   },
   {
@@ -203,7 +203,7 @@
   },
   {
    "find": "visando",
-   "replace": "para",
+   "replace": null,
    "family": "conectivos"
   },
   {
@@ -420,7 +420,7 @@
   },
   {
    "find": "concluindo",
-   "replace": "",
+   "replace": null,
    "family": "fechos"
   },
   {

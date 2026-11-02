@@ -190,6 +190,10 @@ def main():
     ap.add_argument("--lexico", default=LEX)
     a = ap.parse_args()
 
+    # Console do Windows usa cp1252: força UTF-8 para acentos e emoji.
+    for fluxo in (sys.stdin, sys.stdout, sys.stderr):
+        fluxo.reconfigure(encoding="utf-8")
+
     lex = json.load(open(a.lexico, encoding="utf-8"))
     ler = lambda c: sys.stdin.read() if c == "-" else open(c, encoding="utf-8").read()
     alvos = [(a.entrada, ler(a.entrada))]
