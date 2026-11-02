@@ -15,7 +15,8 @@ Três passadas, nesta ordem:
                   replace null são só SINALIZADAS (concordância e contexto
                   pedem reescrita manual).
 
-URLs, e-mails e hashtags nunca são alterados. Siglas e NRs não estão no léxico.
+URLs, e-mails, hashtags e trechos entre aspas (citações) nunca são alterados.
+Siglas e NRs não estão no léxico.
 Estruturas ("não é sobre X, é sobre Y", trincas, perguntas empilhadas) são
 apontadas, nunca reescritas automaticamente.
 
@@ -35,7 +36,8 @@ import unicodedata
 AQUI = os.path.dirname(os.path.abspath(__file__))
 LEX = os.path.join(AQUI, "lexico-ptbr.json")
 
-PROTEGER_RE = re.compile(r"https?://\S+|www\.\S+|\S+@\S+\.\S+|#[\wÀ-ÿ]+")
+PROTEGER_RE = re.compile(r"https?://\S+|www\.\S+|\S+@\S+\.\S+|#[\wÀ-ÿ]+"
+                         r"|“[^”\n]*”|\"[^\"\n]*\"|«[^»\n]*»")
 FRASE_RE = re.compile(r"[^.!?\n]+[.!?]*")
 MARCA = "\x01"  # posição onde uma muleta foi apagada
 
@@ -97,15 +99,17 @@ def passada_tipografia(texto, lex):
             continue
         achados.append({"nome": f"{ch} {e['name']}", "qtd": n, "para": e["to"].strip() or "(espaço)"})
         if ch == "—":
-            texto = re.sub(r"\s*—\s*", ", ", texto)
+            # Travessão no início ou no fim da linha some; no meio vira vírgula.
+            texto = re.sub(r"(?m)^[ \t]*—[ \t]*", "", texto)
+            texto = re.sub(r"[ \t]*—[ \t]*(?=\n|$)", "", texto)
+            texto = re.sub(r"[ \t]*—[ \t]*", ", ", texto)
         elif ch == "–":
             texto = re.sub(r"\s*–\s*(?=\d)", "-", texto)
             texto = re.sub(r"\s+–\s+", ", ", texto)
             texto = texto.replace("–", "-")
         else:
             texto = texto.replace(ch, e["to"])
-    texto = re.sub(r",\s*([,.;:!?])", r"\1", texto)
-    texto = re.sub(r",[ \t]*\n", "\n", texto)
+    texto = re.sub(r",[ \t]*([,.;:!?])", r"\1", texto)
     texto = re.sub(r"(?m)^[ \t]*,[ \t]*", "", texto)
     return texto, achados
 
@@ -149,7 +153,7 @@ def passada_lexico(texto, lex):
                    lambda m: m.group(1) + m.group(2).upper(), texto)
     texto = texto.replace(MARCA, "")
     texto = re.sub(r"[ \t]{2,}", " ", texto)
-    texto = re.sub(r"(?m)^[ \t]*([,.;:])[ \t]*", "", texto)
+    texto = re.sub(r"(?m)^[ \t]*([,.;:])(?!\d)[ \t]*", "", texto)
     texto = re.sub(r"[ \t]+([,.;:!?])", r"\1", texto)
     texto = re.sub(r"([.!?])[ \t]*,[ \t]*", r"\1 ", texto)
     texto = re.sub(r"(?m)^[ \t]+", "", texto)
@@ -235,6 +239,10 @@ def main():
     ap.add_argument("--json", action="store_true", help="emite {texto, relatorio} em JSON")
     ap.add_argument("--lexico", default=LEX)
     a = ap.parse_args()
+
+    # Console do Windows usa cp1252: força UTF-8 para acentos e emoji.
+    for fluxo in (sys.stdin, sys.stdout, sys.stderr):
+        fluxo.reconfigure(encoding="utf-8")
 
     bruto = sys.stdin.read() if a.entrada == "-" else open(a.entrada, encoding="utf-8").read()
     limpo, r = humanizar(bruto, carregar_lexico(a.lexico))

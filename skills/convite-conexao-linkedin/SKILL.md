@@ -23,7 +23,7 @@ Se não houver motivo específico para falar com essa pessoa hoje, diga. Mensage
 
 ### Lista da semana (vários convites)
 
-Quando o usuário trouxer uma lista de pessoas, faça uma nota diferente para cada uma, baseada no motivo de cada uma. Se para alguém não houver motivo, marque "sem gancho: pular ou mandar sem nota" em vez de inventar. Mostre a lista para aprovação antes de qualquer envio.
+Quando o usuário trouxer uma lista de pessoas, faça uma nota diferente para cada uma, baseada no motivo de cada uma. Se para alguém não houver motivo, marque "sem gancho: pular ou mandar sem nota" em vez de inventar. Entregue a lista para o usuário revisar e enviar ele mesmo, um convite de cada vez.
 
 ## A nota do convite (até 200 caracteres)
 
@@ -36,7 +36,7 @@ A nota não pede nada; ela só torna o aceite óbvio. Conte os caracteres (com e
 ```
 Li seu post sobre integração de terceiros e a parte da APR antes do 1º dia
 bateu com o que vejo em montagem elétrica. Sou TST em Goiânia. Quero
-acompanhar seu conteúdo.                                          [167/200]
+acompanhar seu conteúdo.                                          [168/200]
 ```
 
 ## A primeira mensagem, depois do aceite
@@ -62,7 +62,7 @@ Depois disso, pare.
 
 - Nunca invente contato em comum, escola em comum ou ter lido algo que o usuário não leu.
 - Nunca abra com "Espero que esta mensagem o encontre bem" ou "Prezado(a)".
-- Envio em massa ou por ferramenta de automação viola os termos do LinkedIn e pode restringir a conta. Se o envio for feito com ajuda do navegador, é pessoa por pessoa, com a lista aprovada pelo usuário, e em volume baixo por dia.
+- Nunca envie convite ou mensagem, nem opere o navegador ou a conta do usuário para isso, mesmo que ele peça. Esta skill só escreve; quem envia é o usuário, pessoa por pessoa. Envio em massa ou por ferramenta de automação viola os termos do LinkedIn e pode restringir a conta.
 
 ## Saída
 

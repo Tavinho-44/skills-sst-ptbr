@@ -16,7 +16,7 @@ python3 scripts/humanizar.py rascunho.txt -o limpo.txt --relatorio   # limpa e m
 python3 scripts/detectar.py rascunho.txt limpo.txt                   # nota antes e depois
 ```
 
-- **humanizar.py** apaga caracteres invisíveis, troca travessão por vírgula, aspas curvas por retas, apaga muletas seguras ("é importante ressaltar que", "vale lembrar que", "em suma") e troca formalidades ("utilizar" → "usar", "a fim de" → "para"). Palavras como "fundamental", "crucial", "jornada" e os clichês de SST são só **sinalizados**, porque trocar automaticamente quebraria a concordância. URLs, e-mails e hashtags nunca são tocados.
+- **humanizar.py** apaga caracteres invisíveis, troca travessão por vírgula, aspas curvas por retas, apaga muletas seguras ("é importante ressaltar que", "vale lembrar que", "em suma") e troca formalidades ("utilizar" → "usar", "a fim de" → "para"). Palavras como "fundamental", "crucial", "jornada" e os clichês de SST são só **sinalizados**, porque trocar automaticamente quebraria a concordância. URLs, e-mails, hashtags e trechos entre aspas (citações de norma, falas) nunca são tocados. Palavras que mudam o sentido quando trocadas ("alavanca", que também é peça de máquina, "visando", "concluindo") são só sinalizadas.
 - **detectar.py** dá uma nota de 0 a 100 em cinco critérios: VARIAÇÃO (tamanho das frases), CONCRETUDE (números, NRs, siglas, nomes), MULETAS, TIPOGRAFIA (invisíveis, travessões, aspas curvas) e VOZ (primeira pessoa e estruturas de IA). Aprovado = nota 70+ e nenhum critério abaixo de 55.
 - O léxico fica em `scripts/lexico-ptbr.json` e pode ser editado. Nunca coloque siglas, NRs ou termos técnicos nele.
 

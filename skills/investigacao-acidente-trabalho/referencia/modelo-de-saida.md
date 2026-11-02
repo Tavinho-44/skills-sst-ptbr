@@ -8,9 +8,9 @@ Estrutura fixa, sempre nesta ordem. Todo relatório gerado por esta skill deve s
 4. **Horário**
 5. **Atividade executada** — o que estava sendo feito no momento do acidente.
 6. **Equipamentos envolvidos**
-7. **Pessoas envolvidas** — vítima(s), testemunhas, colaboradores no resgate/atendimento.
+7. **Pessoas envolvidas** — vítima(s), testemunhas, colaboradores no resgate/atendimento, identificados por função, setor e vínculo (próprio ou terceiro), sem nome, CPF ou matrícula.
 8. **Sequência cronológica dos fatos** — reconstrução em ordem temporal, com horários quando disponíveis.
-9. **Danos observados** — lesões, danos materiais, ou ambos.
+9. **Danos observados** — lesões (natureza e parte do corpo atingida, sem CID nem diagnóstico individual além do necessário à análise), danos materiais, ou ambos.
 10. **Causas imediatas** — atos e condições inseguras que geraram o evento diretamente.
 11. **Causas básicas** — falhas de gestão, processo ou fatores pessoais/organizacionais por trás das causas imediatas.
 12. **Fatores contribuintes**
@@ -19,7 +19,7 @@ Estrutura fixa, sempre nesta ordem. Todo relatório gerado por esta skill deve s
 15. **Barreiras existentes** — o que deveria ter evitado ou minimizado o evento e existia.
 16. **Barreiras ausentes** — o que deveria existir e não existia.
 17. **Recomendações** — ações corretivas e preventivas específicas ao caso.
-18. **Plano de ação** — responsáveis e prazos, quando essa informação estiver disponível ou puder ser proposta de forma realista.
+18. **Plano de ação** — responsáveis (por cargo ou função, nunca por nome) e prazos, quando essa informação estiver disponível ou puder ser proposta de forma realista.
 19. **Conclusão técnica**
 
 ## Regras de conteúdo
