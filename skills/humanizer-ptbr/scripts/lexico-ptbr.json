@@ -1,0 +1,672 @@
+{
+ "version": "1.0-ptbr",
+ "note": "Léxico usado por humanizar.py e detectar.py. 'replace' com texto = troca automática; 'replace' vazio = apaga a muleta; 'replace' null = só sinaliza para reescrita manual (concordância e contexto pedem julgamento). Não inclua aqui siglas, NRs ou termos técnicos de SST. Edite à vontade.",
+ "invisible": [
+  {
+   "cp": "U+200B",
+   "name": "ZERO WIDTH SPACE",
+   "action": "delete"
+  },
+  {
+   "cp": "U+200C",
+   "name": "ZERO WIDTH NON-JOINER",
+   "action": "delete"
+  },
+  {
+   "cp": "U+200D",
+   "name": "ZERO WIDTH JOINER",
+   "action": "delete"
+  },
+  {
+   "cp": "U+2060",
+   "name": "WORD JOINER",
+   "action": "delete"
+  },
+  {
+   "cp": "U+FEFF",
+   "name": "ZERO WIDTH NO-BREAK SPACE / BOM",
+   "action": "delete"
+  },
+  {
+   "cp": "U+00AD",
+   "name": "SOFT HYPHEN",
+   "action": "delete"
+  },
+  {
+   "cp": "U+180E",
+   "name": "MONGOLIAN VOWEL SEPARATOR",
+   "action": "delete"
+  },
+  {
+   "cp": "U+061C",
+   "name": "ARABIC LETTER MARK",
+   "action": "delete"
+  },
+  {
+   "cp": "U+200E",
+   "name": "LEFT-TO-RIGHT MARK",
+   "action": "delete"
+  },
+  {
+   "cp": "U+200F",
+   "name": "RIGHT-TO-LEFT MARK",
+   "action": "delete"
+  },
+  {
+   "cp": "U+E0000-U+E007F",
+   "name": "TAG CHARACTERS (invisible ASCII smuggling)",
+   "action": "delete"
+  },
+  {
+   "cp": "U+00A0",
+   "name": "NO-BREAK SPACE",
+   "action": "space"
+  },
+  {
+   "cp": "U+202F",
+   "name": "NARROW NO-BREAK SPACE",
+   "action": "space"
+  },
+  {
+   "cp": "U+2009",
+   "name": "THIN SPACE",
+   "action": "space"
+  },
+  {
+   "cp": "U+2007",
+   "name": "FIGURE SPACE",
+   "action": "space"
+  },
+  {
+   "cp": "U+2003",
+   "name": "EM SPACE",
+   "action": "space"
+  },
+  {
+   "cp": "U+2002",
+   "name": "EN SPACE",
+   "action": "space"
+  }
+ ],
+ "typographic": [
+  {
+   "from": "—",
+   "name": "EM DASH",
+   "to": ", "
+  },
+  {
+   "from": "–",
+   "name": "EN DASH",
+   "to": "-"
+  },
+  {
+   "from": "‘",
+   "name": "LEFT SINGLE QUOTE",
+   "to": "'"
+  },
+  {
+   "from": "’",
+   "name": "RIGHT SINGLE QUOTE",
+   "to": "'"
+  },
+  {
+   "from": "“",
+   "name": "LEFT DOUBLE QUOTE",
+   "to": "\""
+  },
+  {
+   "from": "”",
+   "name": "RIGHT DOUBLE QUOTE",
+   "to": "\""
+  },
+  {
+   "from": "…",
+   "name": "HORIZONTAL ELLIPSIS",
+   "to": "..."
+  },
+  {
+   "from": "′",
+   "name": "PRIME",
+   "to": "'"
+  }
+ ],
+ "words": [
+  {
+   "find": "utilizar",
+   "replace": "usar",
+   "family": "verbos"
+  },
+  {
+   "find": "utilizando",
+   "replace": "usando",
+   "family": "verbos"
+  },
+  {
+   "find": "utiliza",
+   "replace": "usa",
+   "family": "verbos"
+  },
+  {
+   "find": "utilizam",
+   "replace": "usam",
+   "family": "verbos"
+  },
+  {
+   "find": "utilizado",
+   "replace": "usado",
+   "family": "verbos"
+  },
+  {
+   "find": "utilizada",
+   "replace": "usada",
+   "family": "verbos"
+  },
+  {
+   "find": "utilizados",
+   "replace": "usados",
+   "family": "verbos"
+  },
+  {
+   "find": "utilizadas",
+   "replace": "usadas",
+   "family": "verbos"
+  },
+  {
+   "find": "potencializar",
+   "replace": "aumentar",
+   "family": "verbos"
+  },
+  {
+   "find": "potencializa",
+   "replace": "aumenta",
+   "family": "verbos"
+  },
+  {
+   "find": "potencializando",
+   "replace": "aumentando",
+   "family": "verbos"
+  },
+  {
+   "find": "alavancar",
+   "replace": "aumentar",
+   "family": "verbos"
+  },
+  {
+   "find": "alavanca",
+   "replace": "aumenta",
+   "family": "verbos"
+  },
+  {
+   "find": "alavancando",
+   "replace": "aumentando",
+   "family": "verbos"
+  },
+  {
+   "find": "visando",
+   "replace": "para",
+   "family": "conectivos"
+  },
+  {
+   "find": "outrossim",
+   "replace": "além disso",
+   "family": "formalidade"
+  },
+  {
+   "find": "destarte",
+   "replace": "assim",
+   "family": "formalidade"
+  },
+  {
+   "find": "ademais",
+   "replace": "além disso",
+   "family": "formalidade"
+  },
+  {
+   "find": "fundamental",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "fundamentais",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "crucial",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "cruciais",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "primordial",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "imprescindível",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "indispensável",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "robusto",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "robusta",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "jornada",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "transformador",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "transformadora",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "sinergia",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "sinérgico",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "ecossistema",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "holístico",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "holística",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "mergulhar",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "desbloquear",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "disruptivo",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "protagonismo",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "ressignificar",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "essencial",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "essenciais",
+   "replace": null,
+   "family": "inflados"
+  }
+ ],
+ "phrases": [
+  {
+   "find": "é importante ressaltar que",
+   "replace": "",
+   "family": "muletas"
+  },
+  {
+   "find": "é importante destacar que",
+   "replace": "",
+   "family": "muletas"
+  },
+  {
+   "find": "é importante lembrar que",
+   "replace": "",
+   "family": "muletas"
+  },
+  {
+   "find": "vale ressaltar que",
+   "replace": "",
+   "family": "muletas"
+  },
+  {
+   "find": "vale destacar que",
+   "replace": "",
+   "family": "muletas"
+  },
+  {
+   "find": "vale lembrar que",
+   "replace": "",
+   "family": "muletas"
+  },
+  {
+   "find": "cabe ressaltar que",
+   "replace": "",
+   "family": "muletas"
+  },
+  {
+   "find": "cabe destacar que",
+   "replace": "",
+   "family": "muletas"
+  },
+  {
+   "find": "é válido mencionar que",
+   "replace": "",
+   "family": "muletas"
+  },
+  {
+   "find": "não é segredo que",
+   "replace": "",
+   "family": "muletas"
+  },
+  {
+   "find": "sem sombra de dúvidas",
+   "replace": "",
+   "family": "muletas"
+  },
+  {
+   "find": "sem sombra de dúvida",
+   "replace": "",
+   "family": "muletas"
+  },
+  {
+   "find": "em suma",
+   "replace": "",
+   "family": "fechos"
+  },
+  {
+   "find": "em resumo",
+   "replace": "",
+   "family": "fechos"
+  },
+  {
+   "find": "em síntese",
+   "replace": "",
+   "family": "fechos"
+  },
+  {
+   "find": "concluindo",
+   "replace": "",
+   "family": "fechos"
+  },
+  {
+   "find": "nos dias de hoje",
+   "replace": "hoje",
+   "family": "aberturas"
+  },
+  {
+   "find": "nos dias atuais",
+   "replace": "hoje",
+   "family": "aberturas"
+  },
+  {
+   "find": "no cenário atual",
+   "replace": "hoje",
+   "family": "aberturas"
+  },
+  {
+   "find": "no mundo atual",
+   "replace": "hoje",
+   "family": "aberturas"
+  },
+  {
+   "find": "no mundo de hoje",
+   "replace": "hoje",
+   "family": "aberturas"
+  },
+  {
+   "find": "a fim de",
+   "replace": "para",
+   "family": "conectivos"
+  },
+  {
+   "find": "no que tange ao",
+   "replace": "sobre o",
+   "family": "formalidade"
+  },
+  {
+   "find": "no que tange à",
+   "replace": "sobre a",
+   "family": "formalidade"
+  },
+  {
+   "find": "no que tange a",
+   "replace": "sobre",
+   "family": "formalidade"
+  },
+  {
+   "find": "no que diz respeito ao",
+   "replace": "sobre o",
+   "family": "formalidade"
+  },
+  {
+   "find": "no que diz respeito à",
+   "replace": "sobre a",
+   "family": "formalidade"
+  },
+  {
+   "find": "no que diz respeito a",
+   "replace": "sobre",
+   "family": "formalidade"
+  },
+  {
+   "find": "de suma importância",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "cada vez mais",
+   "replace": null,
+   "family": "muletas"
+  },
+  {
+   "find": "nesse sentido",
+   "replace": null,
+   "family": "muletas"
+  },
+  {
+   "find": "dessa forma",
+   "replace": null,
+   "family": "muletas"
+  },
+  {
+   "find": "desta forma",
+   "replace": null,
+   "family": "muletas"
+  },
+  {
+   "find": "diante disso",
+   "replace": null,
+   "family": "muletas"
+  },
+  {
+   "find": "sem dúvida",
+   "replace": null,
+   "family": "muletas"
+  },
+  {
+   "find": "de fato",
+   "replace": null,
+   "family": "muletas"
+  },
+  {
+   "find": "em um mundo",
+   "replace": null,
+   "family": "aberturas"
+  },
+  {
+   "find": "desempenha um papel",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "desempenham um papel",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "faz toda a diferença",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "estar no centro",
+   "replace": null,
+   "family": "inflados"
+  },
+  {
+   "find": "segurança em primeiro lugar",
+   "replace": null,
+   "family": "clichês SST"
+  },
+  {
+   "find": "segurança não é custo",
+   "replace": null,
+   "family": "clichês SST"
+  },
+  {
+   "find": "o EPI salva vidas",
+   "replace": null,
+   "family": "clichês SST"
+  },
+  {
+   "find": "acidente não acontece por acaso",
+   "replace": null,
+   "family": "clichês SST"
+  },
+  {
+   "find": "a vida não tem preço",
+   "replace": null,
+   "family": "clichês SST"
+  },
+  {
+   "find": "voltar para casa em segurança",
+   "replace": null,
+   "family": "clichês SST"
+  },
+  {
+   "find": "voltar pra casa em segurança",
+   "replace": null,
+   "family": "clichês SST"
+  },
+  {
+   "find": "cultura de segurança forte",
+   "replace": null,
+   "family": "clichês SST"
+  }
+ ],
+ "structures": [
+  {
+   "id": "nao-e-sobre",
+   "regex": "(?i)\\bnão (?:é|se trata)(?: só| apenas| somente)? (?:sobre |de )?[^.!?\\n]{2,60}[,.;]\\s*(?:é|se trata) (?:sobre|de)\\b",
+   "name": "\"Não é sobre X, é sobre Y\"",
+   "fix": "Diga direto o Y. A inversão é a marca."
+  },
+  {
+   "id": "nao-apenas",
+   "regex": "(?i)\\bnão (?:apenas|só|somente)\\b[^.!?\\n]{2,80}\\bmas também\\b",
+   "name": "\"Não apenas X, mas também Y\"",
+   "fix": "Separe em duas frases ou corte a metade mais fraca."
+  },
+  {
+   "id": "mais-do-que",
+   "regex": "(?i)\\bmais do que [^.!?\\n]{2,60}[,.]\\s*(?:é|são)\\b",
+   "name": "\"Mais do que X, é Y\"",
+   "fix": "Afirme Y sem a moldura."
+  },
+  {
+   "id": "pergunta-revelacao",
+   "regex": "(?im)^\\s*(?:o resultado|a lição|o motivo|a resposta|o detalhe|o problema|spoiler|resultado)\\s*[?:]\\s*$",
+   "name": "Linha de revelação (\"O resultado?\", \"Spoiler:\")",
+   "fix": "Entregue a informação direto, sem o suspense."
+  },
+  {
+   "id": "trinca",
+   "regex": "(?i)\\b[\\wÀ-ÿ]+, [\\wÀ-ÿ]+ e [\\wÀ-ÿ]+[.!]",
+   "name": "Lista de três (\"X, Y e Z.\")",
+   "fix": "Use dois, quatro ou um item só."
+  },
+  {
+   "id": "emoji-hype",
+   "regex": "[\\U0001F680\\U0001F525\\U0001F4A1✨\\U0001F3AF\\U0001F4AF]",
+   "name": "Emoji de foguete/fogo/lâmpada/brilho/alvo",
+   "fix": "Corte ou troque por um emoji com função."
+  },
+  {
+   "id": "parede-hashtag",
+   "regex": "(?:#[\\wÀ-ÿ]+[ \\t]*){7,}",
+   "name": "Parede de hashtags (7+)",
+   "fix": "Fique em 3 a 6 hashtags de nicho."
+  },
+  {
+   "id": "abertura-imagine",
+   "regex": "(?im)^\\s*(?:imagine\\b|você sabia que|já parou para pensar)",
+   "name": "Abertura \"Imagine...\" / \"Você sabia que...\"",
+   "fix": "Comece pelo fato ou pela cena real."
+  },
+  {
+   "id": "fecho-moral",
+   "regex": "(?i)\\bsegurança é (?:responsabilidade|compromisso|dever|papel) de todos\\b",
+   "name": "Fecho moralista genérico",
+   "fix": "Feche com algo que só esse post diria."
+  },
+  {
+   "id": "isca-engajamento",
+   "regex": "(?im)(?:concorda\\?|concordam\\?|o que acham\\?|o que vocês acham\\?|faz sentido\\?|quem mais\\b[^\\n]*\\?)\\s*$",
+   "name": "Pergunta-isca de engajamento",
+   "fix": "Troque por uma pergunta que só este post poderia fazer."
+  },
+  {
+   "id": "gerundismo",
+   "regex": "(?i)\\b(?:vou|vamos|vai|vão|estarei|estaremos) estar [\\wÀ-ÿ]+ndo\\b",
+   "name": "Gerundismo (\"vamos estar enviando\")",
+   "fix": "Use o verbo direto: \"vamos enviar\"."
+  },
+  {
+   "id": "perguntas-empilhadas",
+   "regex": "(?:[^\\n?]{3,}\\?[ \\t]*){3,}",
+   "name": "Três ou mais perguntas seguidas",
+   "fix": "Deixe uma pergunta só."
+  },
+  {
+   "id": "auto-ia",
+   "regex": "(?i)\\bcomo (?:uma )?(?:IA|inteligência artificial|modelo de linguagem)\\b",
+   "name": "Autorreferência de IA",
+   "fix": "Remova."
+  }
+ ]
+}

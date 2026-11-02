@@ -1,0 +1,12 @@
+{
+  "name": "skills-sst-ptbr",
+  "owner": { "name": "Luiz Gustavo Gomes da Costa" },
+  "plugins": [
+    {
+      "name": "skills-sst",
+      "description": "Skills em português para Segurança e Saúde no Trabalho: normas, conferência de documentos, investigação de acidentes, LinkedIn e carreira de TST.",
+      "version": "1.0.0",
+      "source": "./"
+    }
+  ]
+}
