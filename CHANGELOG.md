@@ -10,7 +10,26 @@
 - `scripts/empacotar.py`: gera os ZIPs de `pacotes/` (estrutura `<skill>/...`, fim de linha LF, sem `__pycache__`, mesmo conteúdo gera o mesmo ZIP).
 
 ### Alterado
-- ZIPs de `pacotes/` regerados pelo script. O conteúdo dos arquivos existentes não mudou; entraram as cópias de `referencia/`.
+- ZIPs de `pacotes/` regerados pelo script.
+- As 11 Skills (Fase 5, correções da auditoria):
+  - **Regras comuns:** seguem a Regra A, com a marca de origem ✅/🌐/⚠️ e a data, e mandam ler as cópias de `referencia/`.
+  - **Dependências:** saíram as de Skills e ferramentas que não estão no repositório, e os nomes de ferramenta do Claude Code.
+  - **Datas:** saíram as datas fixas que envelhecem.
+  - **Exemplos:** marcados como ilustrativos, sem números ou vivências inventados.
+- `investigacao-acidente-trabalho`:
+  - pendências entram como "não informado" ou "a apurar";
+  - rótulo fato, evidência ou hipótese em cada porquê;
+  - sem vocabulário de culpa;
+  - bloco de responsável técnico e aviso de rascunho;
+  - seções de evidências, medidas imediatas e limitações.
+- `conferencia-documento-sst`: ⚠️ volta a significar "não conferido", e o resultado da conferência vai numa coluna própria.
+- `humanizer-ptbr`:
+  - **Preservação do texto:** não mexe em vírgula após "etc.", em indentação, em sigla ou unidade (kV, dB(A), pH), em emoji composto nem em citação entre aspas, mesmo quando ela quebra a linha.
+  - **Trocas só sinalizadas:** "utilizado" e "no cenário atual".
+  - **Travessão:** um por texto é mantido, e entre números vira hífen.
+  - **Windows:** lê e grava em UTF-8.
+  - **Códigos de saída:** 0 quando roda e 2 em erro de uso.
+- `carreira-ops-tst`: recebe `privacidade.md`.
 
 ## 1.0.0
 
