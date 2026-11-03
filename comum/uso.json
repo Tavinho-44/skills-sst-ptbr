@@ -1,0 +1,13 @@
+{
+  "_descricao": "Quais arquivos de comum/ cada Skill recebe em referencia/. Editar aqui e rodar scripts/sincronizar_comum.py.",
+  "calendario-editorial-sst": ["regras-de-fonte.md", "linkedin-regras.md"],
+  "carreira-ops-tst": ["regras-de-fonte.md", "linkedin-regras.md"],
+  "caso-de-campo-para-post": ["regras-de-fonte.md", "privacidade.md", "glossario-sst.md", "linkedin-regras.md"],
+  "comentarios-linkedin-sst": ["regras-de-fonte.md", "privacidade.md", "linkedin-regras.md"],
+  "conferencia-documento-sst": ["regras-de-fonte.md", "privacidade.md", "glossario-sst.md"],
+  "consulta-normas-sst": ["regras-de-fonte.md", "glossario-sst.md"],
+  "convite-conexao-linkedin": ["privacidade.md", "linkedin-regras.md"],
+  "investigacao-acidente-trabalho": ["regras-de-fonte.md", "privacidade.md", "glossario-sst.md"],
+  "respostas-comentarios-linkedin": ["regras-de-fonte.md", "privacidade.md", "linkedin-regras.md"],
+  "revisao-tecnica-post-sst": ["regras-de-fonte.md", "privacidade.md", "glossario-sst.md", "linkedin-regras.md"]
+}
