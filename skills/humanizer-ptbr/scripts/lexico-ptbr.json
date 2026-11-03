@@ -1,6 +1,6 @@
 {
- "version": "1.0-ptbr",
- "note": "Léxico usado por humanizar.py e detectar.py. 'replace' com texto = troca automática; 'replace' vazio = apaga a muleta; 'replace' null = só sinaliza para reescrita manual (concordância e contexto pedem julgamento). Não inclua aqui siglas, NRs ou termos técnicos de SST. Edite à vontade.",
+ "version": "1.1-ptbr",
+ "note": "Léxico usado por humanizar.py e detectar.py. 'replace' com texto = troca automática; 'replace' vazio = apaga a muleta; 'replace' null = só sinaliza para reescrita manual (concordância, contexto ou mudança de sentido pedem julgamento). 'excecoes' lista usos técnicos de SST que não devem ser sinalizados nem contados: 'termos' são entradas de 'words'/'phrases' e 'contexto' é uma expressão regular que precisa cobrir o termo (ex.: 'jornada de trabalho'). Não inclua aqui siglas, NRs ou termos técnicos de SST. Edite à vontade.",
  "invisible": [
   {
    "cp": "U+200B",
@@ -153,22 +153,22 @@
   },
   {
    "find": "utilizado",
-   "replace": "usado",
+   "replace": null,
    "family": "verbos"
   },
   {
    "find": "utilizada",
-   "replace": "usada",
+   "replace": null,
    "family": "verbos"
   },
   {
    "find": "utilizados",
-   "replace": "usados",
+   "replace": null,
    "family": "verbos"
   },
   {
    "find": "utilizadas",
-   "replace": "usadas",
+   "replace": null,
    "family": "verbos"
   },
   {
@@ -188,7 +188,7 @@
   },
   {
    "find": "alavancar",
-   "replace": "aumentar",
+   "replace": null,
    "family": "verbos"
   },
   {
@@ -198,7 +198,7 @@
   },
   {
    "find": "alavancando",
-   "replace": "aumentando",
+   "replace": null,
    "family": "verbos"
   },
   {
@@ -435,12 +435,12 @@
   },
   {
    "find": "no cenário atual",
-   "replace": "hoje",
+   "replace": null,
    "family": "aberturas"
   },
   {
    "find": "no mundo atual",
-   "replace": "hoje",
+   "replace": null,
    "family": "aberturas"
   },
   {
@@ -667,6 +667,67 @@
    "regex": "(?i)\\bcomo (?:uma )?(?:IA|inteligência artificial|modelo de linguagem)\\b",
    "name": "Autorreferência de IA",
    "fix": "Remova."
+  }
+ ],
+ "excecoes": [
+  {
+   "termos": [
+    "jornada"
+   ],
+   "motivo": "jornada de trabalho é termo legal (CLT, NRs)",
+   "contexto": "jornadas?\\s+(?:de\\s+trabalho|diárias?|semanais?|mensais?|noturnas?|extraordinárias?|parciais?|em\\s+turnos?|de\\s+\\d+|de\\s+(?:oito|seis|doze)\\s+horas)|(?:duração|redução|compensação|limite|controle|registro|horário|fora)\\s+(?:d[ae]\\s+|da\\s+)?jornada"
+  },
+  {
+   "termos": [
+    "desbloquear"
+   ],
+   "motivo": "desbloqueio de energia e de dispositivos (LOTO, NR-10, NR-12)",
+   "contexto": "(?:energia|energiz\\w+|equipamentos?|dispositivos?|cadeados?|etiquetas?|bloqueios?|LOTO|trav\\w+|válvulas?|máquinas?|painéis|painel|chaves?|circuitos?)(?:\\W+\\w+){0,6}?\\W+desbloquear|desbloquear(?:\\W+\\w+){0,6}?\\W+(?:energia|energiz\\w+|equipamentos?|dispositivos?|cadeados?|etiquetas?|bloqueios?|LOTO|trav\\w+|válvulas?|máquinas?|painéis|painel|chaves?|circuitos?)"
+  },
+  {
+   "termos": [
+    "mergulhar"
+   ],
+   "motivo": "trabalho com mergulho e em meio líquido (NR-15, NR-30, NR-37)",
+   "contexto": "(?:mergulho|mergulhador\\w*|hiperbár\\w*|submers\\w*|subaquátic\\w*|cilindros?|tanques?|piscinas?|águas?|NR-?\\s?(?:15|30|37))(?:\\W+\\w+){0,8}?\\W+mergulhar|mergulhar(?:\\W+\\w+){0,8}?\\W+(?:mergulho|mergulhador\\w*|hiperbár\\w*|submers\\w*|subaquátic\\w*|cilindros?|tanques?|piscinas?|águas?|NR-?\\s?(?:15|30|37))"
+  },
+  {
+   "termos": [
+    "essencial",
+    "essenciais"
+   ],
+   "motivo": "serviços e atividades essenciais (termo legal)",
+   "contexto": "(?:serviços?|atividades?|funções?|setores|setor|bens|bem|nutrientes|aminoácidos|óleos)\\s+(?:públicos\\s+)?essencia(?:l|is)|essencia(?:l|is)\\s+(?:à|a|para)\\s+(?:vida|saúde)"
+  },
+  {
+   "termos": [
+    "ecossistema"
+   ],
+   "motivo": "ecossistema em sentido ambiental (NR-22, NR-31, licenciamento)",
+   "contexto": "ecossistemas?\\s+(?:aquáticos?|terrestres?|naturais?|florestais?|marinhos?|costeiros?|locais?|frágeis?)|(?:fauna|flora|biodiversidade|meio\\s+ambiente|ambiental|ambientais|bioma|manguezal)(?:\\W+\\w+){0,6}?\\W+ecossistemas?|ecossistemas?(?:\\W+\\w+){0,6}?\\W+(?:fauna|flora|biodiversidade|meio\\s+ambiente|ambiental|ambientais|bioma)"
+  },
+  {
+   "termos": [
+    "fundamental",
+    "fundamentais"
+   ],
+   "motivo": "ensino fundamental e direitos fundamentais (termos legais e de escolaridade)",
+   "contexto": "ensino\\s+fundamental|nível\\s+fundamental|fundamental\\s+(?:completo|incompleto)|direitos?\\s+fundamentais|garantias\\s+fundamentais"
+  },
+  {
+   "termos": [
+    "transformador",
+    "transformadora"
+   ],
+   "motivo": "transformador elétrico (NR-10, SEP)",
+   "contexto": "\\b(?:o|um|do|no|ao|dos|nos|os|de|pelo|pelos)\\s+transformador(?:es)?\\b|transformador(?:es)?\\s+(?:de\\s+(?:potência|distribuição|corrente|potencial|tensão|força)|trifásic\\w+|monofásic\\w+|elétric\\w+|a\\s+óleo|seco|isolador|abaixador|elevador)"
+  },
+  {
+   "termos": [
+    "alavanca"
+   ],
+   "motivo": "alavanca como peça ou comando de máquina (NR-12)",
+   "contexto": "\\b(?:a|da|na|uma|pela|essa|esta|aquela|cada|as|das|nas|pelas)\\s+alavancas?\\b|alavancas?\\s+d[eoa]s?\\s+(?:bloqueio|comando|freio|câmbio|acionamento|emergência|segurança)"
   }
  ]
 }

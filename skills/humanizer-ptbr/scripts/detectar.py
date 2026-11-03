@@ -14,10 +14,19 @@ Não chama essas ferramentas e não garante o veredito delas.
 
 Cada verificação vai de 0 a 100. Quanto maior, mais humano.
 
-Uso
-  python3 detectar.py rascunho.txt
-  python3 detectar.py antes.txt depois.txt     # compara duas versões
-  python3 detectar.py rascunho.txt --json
+Termos da lista "excecoes" do léxico (uso técnico de SST, como "jornada de
+trabalho", "desbloquear" um equipamento, "transformador" elétrico) e trechos
+entre aspas (citações) não contam como muleta.
+
+Uso (a partir da pasta da Skill; no Windows use "python", em Linux/macOS "python3")
+  python scripts/detectar.py rascunho.txt
+  python scripts/detectar.py antes.txt depois.txt     # compara duas versões
+  python scripts/detectar.py rascunho.txt --json
+  python scripts/detectar.py - < rascunho.txt
+
+Códigos de saída: 0 = rodou (mesmo que o texto não seja aprovado: o veredito
+aparece na tela e no JSON); 2 = erro de uso (arquivo inexistente, texto vazio,
+arquivo que não é UTF-8, léxico inválido).
 """
 
 import argparse
@@ -44,7 +53,65 @@ NUMEROS = re.compile(r"\b\d[\d.,]*%?|\bR\$\s?\d|\bNR-?\s?\d{1,2}\b")
 SIGLAS = re.compile(r"\b[A-Z]{2,6}\b")
 PROPRIOS = re.compile(r"(?<![.!?]\s)(?<!^)\b[A-ZÀ-Ý][a-zà-ÿ]{2,}\b", re.MULTILINE)
 
+CITACAO_RE = re.compile(r"“[^”\n]*”|\"[^\"\n]*\"|«[^»\n]*»")
+
 VERIFICACOES = ["VARIAÇÃO", "CONCRETUDE", "MULETAS", "TIPOGRAFIA", "VOZ"]
+
+
+def erro(msg):
+    """Mensagem de erro de uso: vai para stderr e sai com código 2."""
+    print(f"erro: {msg}", file=sys.stderr)
+    sys.exit(2)
+
+
+def configurar_utf8():
+    # Console do Windows usa cp1252: força UTF-8 para acentos e emoji.
+    for fluxo in (sys.stdout, sys.stderr):
+        try:
+            fluxo.reconfigure(encoding="utf-8")
+        except (AttributeError, ValueError):
+            pass
+
+
+def carregar_lexico(caminho):
+    try:
+        with open(caminho, encoding="utf-8") as fh:
+            return json.load(fh)
+    except FileNotFoundError:
+        erro(f"léxico não encontrado: {caminho}")
+    except (json.JSONDecodeError, UnicodeDecodeError) as e:
+        erro(f"léxico inválido ({caminho}): {e}")
+    except OSError as e:
+        erro(f"não foi possível abrir o léxico {caminho}: {e}")
+
+
+def ler_entrada(caminho):
+    """Lê o texto como UTF-8 (com ou sem BOM). A entrada padrão é lida em bytes,
+    para não depender da página de código do console."""
+    try:
+        if caminho == "-":
+            if sys.stdin is None or sys.stdin.isatty():
+                erro("nenhum texto recebido na entrada padrão. "
+                     "Passe um arquivo (ex.: rascunho.txt) ou redirecione: < rascunho.txt")
+            dados = sys.stdin.buffer.read()
+        else:
+            with open(caminho, "rb") as fh:
+                dados = fh.read()
+    except FileNotFoundError:
+        erro(f"arquivo não encontrado: {caminho}")
+    except IsADirectoryError:
+        erro(f"{caminho} é uma pasta, não um arquivo de texto")
+    except OSError as e:
+        erro(f"não foi possível ler {caminho}: {e}")
+    try:
+        texto = dados.decode("utf-8-sig")
+    except UnicodeDecodeError:
+        erro("o texto não está em UTF-8. Salve o arquivo como UTF-8 e tente de novo "
+             "(no Bloco de Notas: Salvar como > Codificação UTF-8).")
+    texto = texto.replace("\r\n", "\n").replace("\r", "\n")
+    if not texto.strip():
+        erro("o texto está vazio")
+    return texto
 
 
 def limitar(n):
@@ -88,13 +155,32 @@ def _padrao(termo):
     return re.compile(r"\b" + re.escape(termo).replace(r"\ ", r"\s+") + r"\b", re.IGNORECASE)
 
 
+def spans_excecao(t, lex):
+    """Trechos em que um termo do léxico tem uso técnico de SST e não conta como muleta."""
+    por_termo = {}
+    for ex in lex.get("excecoes", []):
+        try:
+            padrao = re.compile(ex["contexto"], re.IGNORECASE)
+        except re.error:
+            continue
+        spans = [m.span() for m in padrao.finditer(t)]
+        for termo in ex["termos"]:
+            por_termo.setdefault(termo.lower(), []).extend(spans)
+    return por_termo
+
+
 def v_muletas(t, lex):
     p = palavras(t)
     if not p:
         return 50.0, "vazio"
+    # Citações entre aspas não são vocabulário do autor; ficam fora da contagem.
+    t = CITACAO_RE.sub(lambda m: " " * len(m.group(0)), t)
+    excecoes = spans_excecao(t, lex)
     total, achados = 0, []
     for e in lex["words"] + lex["phrases"]:
-        n = len(_padrao(e["find"]).findall(t))
+        spans = excecoes.get(e["find"].lower(), [])
+        n = sum(1 for m in _padrao(e["find"]).finditer(t)
+                if not any(a <= m.start() and m.end() <= b for a, b in spans))
         if n:
             total += n
             achados.append(e["find"])
@@ -105,10 +191,10 @@ def v_muletas(t, lex):
     return escala(dens, 0.0, 4.0), det
 
 
-def v_tipografia(t):
+def v_tipografia(t, aceitar_curvas=False):
     invis = sum(1 for c in t if unicodedata.category(c) == "Cf")
     trav = t.count("—")
-    curvas = sum(t.count(c) for c in "‘’“”")
+    curvas = 0 if aceitar_curvas else sum(t.count(c) for c in "‘’“”")
     retic = t.count("…")
     duro = sum(t.count(c) for c in "   ")
     total = invis * 4 + max(trav - 1, 0) * 2 + curvas + retic + duro  # um travessão é tolerado
@@ -147,12 +233,12 @@ def v_voz(t, lex):
     return limitar(nota), det
 
 
-def avaliar(t, lex):
+def avaliar(t, lex, aceitar_curvas=False):
     r = {
         "VARIAÇÃO": v_variacao(t),
         "CONCRETUDE": v_concretude(t),
         "MULETAS": v_muletas(t, lex),
-        "TIPOGRAFIA": v_tipografia(t),
+        "TIPOGRAFIA": v_tipografia(t, aceitar_curvas),
         "VOZ": v_voz(t, lex),
     }
     notas = [r[v][0] for v in VERIFICACOES]
@@ -183,26 +269,27 @@ def mostrar(r, geral, veredito, rotulo=None, out=sys.stdout):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Dá uma nota de cara de IA para um texto em português.")
-    ap.add_argument("entrada", nargs="?", default="-")
+    ap = argparse.ArgumentParser(description="Dá uma nota de cara de IA para um texto em português. "
+                                 "Código de saída 0 quando roda (aprovado ou não); 2 em erro de uso.")
+    ap.add_argument("entrada", nargs="?", default="-", help="arquivo de texto em UTF-8, ou - para a entrada padrão")
     ap.add_argument("comparar", nargs="?", help="segundo arquivo, para antes/depois")
     ap.add_argument("--json", action="store_true")
+    ap.add_argument("--aceitar-aspas-curvas", action="store_true",
+                    help="não penaliza aspas curvas (texto formal, ABNT, documentos)")
     ap.add_argument("--lexico", default=LEX)
     a = ap.parse_args()
 
-    # Console do Windows usa cp1252: força UTF-8 para acentos e emoji.
-    for fluxo in (sys.stdin, sys.stdout, sys.stderr):
-        fluxo.reconfigure(encoding="utf-8")
-
-    lex = json.load(open(a.lexico, encoding="utf-8"))
-    ler = lambda c: sys.stdin.read() if c == "-" else open(c, encoding="utf-8").read()
-    alvos = [(a.entrada, ler(a.entrada))]
+    configurar_utf8()
+    lex = carregar_lexico(a.lexico)
+    alvos = [(a.entrada, ler_entrada(a.entrada))]
     if a.comparar:
-        alvos.append((a.comparar, ler(a.comparar)))
+        if a.comparar == "-" or a.entrada == "-":
+            erro("na comparação, passe os dois textos como arquivos (a entrada padrão serve para um só)")
+        alvos.append((a.comparar, ler_entrada(a.comparar)))
 
     saida = []
     for nome, texto in alvos:
-        r, geral, veredito = avaliar(texto, lex)
+        r, geral, veredito = avaliar(texto, lex, a.aceitar_aspas_curvas)
         saida.append({"fonte": nome,
                       "verificacoes": {k: {"nota": round(v[0], 1), "detalhe": v[1]} for k, v in r.items()},
                       "nota_humana": round(geral, 1), "veredito": veredito})
@@ -215,7 +302,7 @@ def main():
         x, y = saida
         print(f"  {x['nota_humana']:.1f} {x['veredito']}  ->  {y['nota_humana']:.1f} {y['veredito']}   "
               f"({y['nota_humana'] - x['nota_humana']:+.1f})\n")
-    sys.exit(0 if saida[-1]["veredito"] == "APROVADO" else 1)
+    # Texto não aprovado não é erro: o veredito está na saída. Código 0 sempre que rodou.
 
 
 if __name__ == "__main__":
