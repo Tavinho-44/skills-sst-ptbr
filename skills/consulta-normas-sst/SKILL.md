@@ -24,7 +24,7 @@ Identifique, perguntando só o que faltar e for decisivo:
 Verifique cada nível e registre só o que for aplicável ao caso. Pule níveis sem relação, sem inventar dispositivo.
 
 1. **Constituição Federal**: art. 7º, especialmente XXII (redução de riscos), XXIII (adicionais), XXVIII (seguro contra acidentes) e XXXIII (proibições para menores).
-2. **Convenções da OIT ratificadas** (status supralegal): consolidadas no Decreto 10.088/2019. Ex.: 155 (SST e meio ambiente de trabalho), 161 (serviços de saúde no trabalho), 174 (acidentes industriais maiores), 184 (agricultura).
+2. **Convenções da OIT ratificadas** (status supralegal): consolidadas no Decreto 10.088/2019. Ex.: 155 (SST e meio ambiente de trabalho), 161 (serviços de saúde no trabalho) e 174 (acidentes industriais maiores). A 184 (agricultura) não foi ratificada pelo Brasil.
 3. **Leis**: CLT arts. 154 a 201 (Capítulo V, redação da Lei 6.514/77; art. 200 delega ao Ministério do Trabalho a edição das NRs); Lei 8.213/91 (benefícios e acidente de trabalho); leis específicas do tema.
 4. **Decretos**: Decreto 3.048/99 (Regulamento da Previdência Social), entre outros.
 5. **Portarias**: Portaria 3.214/78 e as portarias que aprovam e alteram cada NR. Lembrar ao usuário que NR e portaria estão no mesmo nível jurídico: a NR é o texto aprovado pela portaria.
