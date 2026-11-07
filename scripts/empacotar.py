@@ -88,6 +88,21 @@ def gerar_zip(pasta_skill):
     return buffer.getvalue()
 
 
+def assinatura_do_zip(dados_zip):
+    """Nome, permissões e conteúdo de cada entrada, sem depender da compressão.
+
+    Python e zlib de versões ou sistemas diferentes (Windows x Linux do GitHub Actions)
+    podem comprimir os mesmos arquivos em bytes diferentes. Para saber se um ZIP está
+    atualizado, compara-se o que ele contém, não os bytes comprimidos.
+    """
+    with zipfile.ZipFile(io.BytesIO(dados_zip)) as zf:
+        return [(i.filename, i.external_attr, i.date_time, zf.read(i.filename)) for i in zf.infolist()]
+
+
+def mesmo_conteudo(zip_a, zip_b):
+    return assinatura_do_zip(zip_a) == assinatura_do_zip(zip_b)
+
+
 def problemas_do_zip(dados_zip, nome_skill):
     """Confere um ZIP já gerado: estrutura, fim de linha e arquivos proibidos."""
     problemas = []
@@ -156,7 +171,7 @@ def main():
             if not destino.is_file():
                 falhas += 1
                 print(f"ERRO  {destino.name}: não existe em {args.saida}")
-            elif destino.read_bytes() != dados:
+            elif not mesmo_conteudo(destino.read_bytes(), dados):
                 falhas += 1
                 print(f"ERRO  {destino.name}: desatualizado (rode python scripts/empacotar.py)")
             else:
@@ -164,7 +179,7 @@ def main():
             continue
         args.saida.mkdir(parents=True, exist_ok=True)
         anterior = destino.read_bytes() if destino.is_file() else None
-        if anterior == dados:
+        if anterior is not None and mesmo_conteudo(anterior, dados):
             print(f"IGUAL {destino.name}")
         else:
             destino.write_bytes(dados)

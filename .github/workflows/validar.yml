@@ -1,0 +1,40 @@
+name: Validar
+
+# Roda a cada envio e a cada pull request. Reprova se:
+# - alguma Skill estiver com frontmatter, links ou cópias de comum/ quebrados;
+# - algum ZIP de pacotes/ não bater com a pasta da Skill (esqueceu de reempacotar);
+# - aparecer dado pessoal (CPF, CNPJ, celular, e-mail, caminho local) ou conteúdo Premium;
+# - o gitleaks achar chave, token ou senha em qualquer commit.
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  skills:
+    name: Skills, pacotes e dados pessoais
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Cópias de comum/
+        run: python scripts/sincronizar_comum.py --conferir
+      - name: Validação completa
+        run: python scripts/validar.py
+
+  segredos:
+    name: Segredos (gitleaks)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
