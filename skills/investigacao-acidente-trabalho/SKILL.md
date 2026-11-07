@@ -38,6 +38,21 @@ Esta edição aplica duas ferramentas, nesta ordem:
 
 Se o usuário pedir outra metodologia, diga que ela não faz parte desta Skill e siga com as duas acima.
 
+## Hipóteses concorrentes (antes de fechar as causas)
+
+Os 5 Porquês seguem um caminho só e tendem a confirmar a primeira explicação que aparece. Esta etapa é uma checagem, não uma metodologia a mais.
+
+1. Liste de 2 a 4 hipóteses plausíveis para o mecanismo do acidente e para a causa raiz. Pelo menos uma tem de ser de método, organização ou gestão (planejamento, procedimento, supervisão, prazo), e não só do que a pessoa fez.
+2. Para cada uma, procure no relato e nas evidências o que a **derruba**, não só o que a apoia: horário, sequência, versões das testemunhas, estado do equipamento, permissão de trabalho, treinamento.
+3. Classifique cada hipótese:
+   - **sustentada:** há fato ou evidência a favor e nada contra;
+   - **descartada:** há fato ou evidência contra (diga qual);
+   - **em aberto:** falta evidência (diga qual resolveria: foto, registro, inspeção do local, depoimento, medição).
+4. Os 5 Porquês e o 5M partem da hipótese sustentada. Se duas continuarem sustentadas, analise as duas e diga isso. Se nenhuma estiver sustentada, a causa raiz é "provável (hipótese)", como manda a seção "Como escrever".
+5. Atribuir causa a pessoa, equipe ou gestão continua exigindo evidência: hipótese sobre o comportamento de alguém fica rotulada como hipótese, mesmo quando é a mais provável.
+
+Onde entra no relatório, sem criar seção nova: o resumo das hipóteses, com o motivo de cada uma ter sido mantida ou descartada, vai em **Causas básicas**; as que ficaram em aberto vão em **Limitações da análise**, cada uma com a evidência que resolveria e quem deve apurar, por função.
+
 ## Como escrever
 
 - Linguagem técnica, objetiva e sem redundância. Cronologia clara, mesmo que o relato venha fora de ordem.

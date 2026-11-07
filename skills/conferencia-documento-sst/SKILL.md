@@ -76,6 +76,25 @@ No máximo 12 achados, em ordem de gravidade:
 
 Cada achado: `[parágrafo]` · o problema em uma frase · por quê (item conferido no texto da norma, com a origem da Regra A, ou trecho do documento, mascarado se tiver dado pessoal) · a correção em uma linha · se o requisito é **obrigação** (norma conferida) ou **boa prática** (recomendação). Separe **fato** (está no documento ou na norma) de **inferência** sua. Não reescreva parágrafos inteiros.
 
+## Veredito (abre a resposta)
+
+Depois das duas leituras, comece a resposta com uma linha de veredito, para quem revisa saber em segundos o que fazer com o documento. O veredito vale só para o que foi conferido e não substitui a análise e a assinatura do responsável técnico.
+
+- **NÃO APTO:** qualquer 🔴 em A ou em B.
+- **APTO COM RESSALVAS:** nenhum 🔴, mas algum `Versão errada para a data`, algum 🟠, ou `Sem conferência` numa citação que sustenta obrigação, conclusão ou medida de controle.
+- **APTO:** só `Confere` e 🟡, ou `Sem conferência` apenas em citação acessória.
+- **SEM VEREDITO:** o documento veio incompleto (anexo citado que não veio, páginas faltando, trecho escaneado ilegível que pesa na conclusão). Diga o que falta e não classifique.
+
+Logo abaixo, uma linha por etapa, nesta ordem, cada uma com ✔ ou ✘ e o número de achados:
+
+1. Citações (A)
+2. Requisitos mínimos (lente do fiscal)
+3. Coerência e evidências (lente do perito)
+4. Aplicabilidade em campo
+5. Acabamento e dados pessoais
+
+Depois vêm os detalhes de A e B como descritos acima.
+
 ## Fechamento
 
 - Uma linha com o que **não** foi conferido: NBR sem texto disponível, lei sem acesso ao texto, anexo que não veio, trecho escaneado ilegível, parágrafos não lidos, redação antiga não encontrada, data de referência presumida. Peça o trecho ou o PDF do que ficou ⚠️.
