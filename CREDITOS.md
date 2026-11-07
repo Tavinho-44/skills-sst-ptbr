@@ -10,5 +10,6 @@ Algumas skills deste repositório foram adaptadas ou inspiradas em projetos aber
 | respostas-comentarios-linkedin | [Jakeschincariol/linkedin-agent-skill](https://github.com/Jakeschincariol/linkedin-agent-skill) (skill li-reply), de Jake Schincariol | MIT | Triagem e resposta de comentários, adaptadas para o português e SST (licença original em `skills/respostas-comentarios-linkedin/LICENCA-linkedin-agent-skill.txt`) |
 | convite-conexao-linkedin | [Jakeschincariol/linkedin-agent-skill](https://github.com/Jakeschincariol/linkedin-agent-skill) (skill li-dm), de Jake Schincariol | MIT | Convite, primeira mensagem e acompanhamentos, adaptados para o português e SST (licença original em `skills/convite-conexao-linkedin/LICENCA-linkedin-agent-skill.txt`) |
 | conferencia-documento-sst | [jcbarbalho/claude-skills-advocacia-br](https://github.com/jcbarbalho/claude-skills-advocacia-br) | Apache-2.0 | Ideia do conferente de citações e do revisor adversário; o texto foi escrito do zero para documentos de SST |
+| investigacao-acidente-trabalho, conferencia-documento-sst | [affaan-m/ECC](https://github.com/affaan-m/ECC), de Affaan Mustafa | MIT | Ideias da checagem de hipóteses concorrentes (skill osint-investigation) e do veredito por etapas (skill verification-loop); o texto foi escrito do zero |
 
 O restante é de autoria própria.

@@ -34,6 +34,9 @@
   - **Windows:** lê e grava em UTF-8.
   - **Códigos de saída:** 0 quando roda e 2 em erro de uso.
 - `carreira-ops-tst`: recebe `privacidade.md`.
+- `investigacao-acidente-trabalho`: etapa de hipóteses concorrentes antes de fechar as causas (2 a 4 hipóteses, ao menos uma de método ou gestão, cada uma sustentada, descartada ou em aberto); resumo em Causas básicas e as em aberto em Limitações.
+- `conferencia-documento-sst`: a resposta abre com veredito (APTO, APTO COM RESSALVAS, NÃO APTO ou SEM VEREDITO) e uma linha por etapa.
+- CREDITOS: ideias adaptadas do affaan-m/ECC (MIT).
 
 ## 1.0.0
 
