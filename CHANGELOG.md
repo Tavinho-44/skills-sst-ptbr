@@ -3,6 +3,9 @@
 ## Não lançado
 
 ### Adicionado
+- `.github/workflows/validar.yml`: o GitHub roda a validação e o gitleaks (segredos no histórico) a cada envio e pull request; selo no README.
+- `scripts/validar.py`: dados proibidos agora incluem CNPJ, celular e e-mail.
+- README: aviso para instalar só do repositório oficial e seção de manutenção.
 - `comum/`: regras compartilhadas pelas Skills (`regras-de-fonte.md` com a Regra A, `privacidade.md`, `glossario-sst.md`, `linkedin-regras.md`) e `uso.json`, que diz quais arquivos cada Skill recebe.
 - `skills/<skill>/referencia/`: cópias de `comum/`, geradas por script. As Skills ainda não mandam ler esses arquivos; isso entra na próxima versão.
 - `scripts/sincronizar_comum.py`: copia `comum/` para `referencia/` de cada Skill e confere se as cópias estão iguais.
@@ -10,6 +13,7 @@
 - `scripts/empacotar.py`: gera os ZIPs de `pacotes/` (estrutura `<skill>/...`, fim de linha LF, sem `__pycache__`, mesmo conteúdo gera o mesmo ZIP).
 
 ### Alterado
+- `scripts/empacotar.py` e `scripts/validar.py`: a conferência dos ZIPs compara o conteúdo (nomes, permissões e arquivos), não os bytes comprimidos. Antes, Python de versões ou sistemas diferentes acusava os 11 ZIPs como desatualizados mesmo com o conteúdo igual, e a checagem no GitHub reprovaria sempre.
 - ZIPs de `pacotes/` regerados pelo script.
 - As 11 Skills (Fase 5, correções da auditoria):
   - **Regras comuns:** seguem a Regra A, com a marca de origem ✅/🌐/⚠️ e a data, e mandam ler as cópias de `referencia/`.
