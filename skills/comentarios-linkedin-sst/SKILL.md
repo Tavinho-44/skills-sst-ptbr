@@ -11,6 +11,8 @@ Comentar costuma render mais visibilidade do que se imagina e é fácil de fazer
 
 Não é para responder comentários no post do próprio usuário (para isso, use `respostas-comentarios-linkedin`, também deste repositório).
 
+Os arquivos de `referencia/` ficam na pasta desta Skill. Abra cada um pelo caminho, com a ferramenta de leitura, sem depender de busca por arquivos: a pasta da Skill pode estar oculta e não aparecer na busca.
+
 ## Regras comuns
 
 Leia os arquivos da pasta `referencia/` e siga:
@@ -47,7 +49,7 @@ Corrigir alguém em público exige a Regra A (`referencia/regras-de-fonte.md`):
 
 1. Confira a norma antes: base local do usuário, se houver; senão, fonte oficial pela busca na web, se estiver disponível nesta conversa; senão, peça ao usuário o trecho da norma ou o PDF. Confira também a vigência na data do post ou do fato em discussão (a data de referência).
 2. **✅ ou 🌐:** escreva a correção com o item e, na nota ao usuário (fora do texto do comentário), a marca de origem e a data da conferência.
-3. **⚠️ (não conferido):** não escreva correção. Escreva uma pergunta que convide a pessoa a verificar ("Você consegue indicar o item da norma que sustenta isso? Quero conferir a redação vigente."). Comentário ⚠️ não é marcado como pronto para publicar.
+3. **⚠️ (não conferido):** não escreva correção. Escreva uma pergunta que convide a pessoa a verificar ("Você consegue indicar o item da norma que sustenta isso? Quero conferir a redação vigente."). Comentário ⚠️ não é marcado como pronto para publicar nem é "o que eu postaria". Não atribua ao usuário conhecimento da norma que ele não informou ("o que eu conheço trata disso de outra forma").
 4. Se o próprio erro for da Skill ou do usuário, é melhor não comentar do que comentar errado.
 5. Corrija a afirmação, não a pessoa. Sem ironia, sem expor o autor do post.
 
@@ -68,7 +70,7 @@ Norma em transição: a redação aplicável é a vigente na data de referência
 
 ## Saída
 
-Duas opções de tipos diferentes, com rótulo, e uma linha dizendo qual você postaria e por quê. Marque cada opção com a situação das citações (sem norma, ✅, 🌐 ou ⚠️). Depois de escritas, sugira passar as duas pela Skill `humanizer-ptbr` (opcional, também deste repositório): em comentário curto, um travessão denuncia IA mais do que em post. Sem ela, revise você mesmo: tire travessão, "além disso" e frases genéricas.
+Duas opções de tipos diferentes, com rótulo, e uma linha dizendo qual você postaria e por quê. Se a opção depende de conferência (⚠️) ou de vivência que o usuário ainda não confirmou, diga isso nessa linha e diga que quem publica é o usuário. Marque cada opção com a situação das citações (sem norma, ✅, 🌐 ou ⚠️). Depois de escritas, sugira passar as duas pela Skill `humanizer-ptbr` (opcional, também deste repositório): em comentário curto, um travessão denuncia IA mais do que em post. Sem ela, revise você mesmo: tire travessão, "além disso" e frases genéricas.
 
 O exemplo abaixo é **ilustrativo**: o post, as lacunas e as respostas são fictícios, e o usuário só usa o relato (tipo 6) se for verdade para ele.
 

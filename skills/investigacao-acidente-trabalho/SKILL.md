@@ -13,6 +13,8 @@ Regras comuns, que esta Skill segue sem repetir aqui (leia quando for usar):
 - `referencia/regras-de-fonte.md`: Regra A para toda citação de norma (✅ Base local, 🌐 Fonte oficial, ⚠️ Não conferido).
 - `referencia/glossario-sst.md`: termos, vocabulário sem culpa presumida (seção 2) e rótulos fato, evidência e hipótese.
 
+Os arquivos de `referencia/` ficam na pasta desta Skill. Abra cada um pelo caminho, com a ferramenta de leitura, sem depender de busca por arquivos: a pasta da Skill pode estar oculta e não aparecer na busca.
+
 ## Antes de escrever: verifique o mínimo
 
 Confira se o relato contém, ainda que de forma aproximada:

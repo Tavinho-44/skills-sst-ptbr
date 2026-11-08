@@ -19,9 +19,11 @@ Regras comuns: `referencia/regras-de-fonte.md` (Regra A: ✅ Base local, 🌐 Fo
 - **Sem automação de portais:** nunca raspar, varrer em massa nem operar navegador ou conta em portal de vagas ou LinkedIn. A busca é manual: o usuário pesquisa e cola as vagas, ou a Skill usa busca na web comum, se estiver disponível, e devolve links para o usuário abrir.
 - **Dados de terceiros:** de recrutador, gestor ou colega, use só cargo e empresa; não guarde nem repita telefone, e-mail ou outros dados pessoais além do necessário (siga `referencia/privacidade.md`).
 
+Os arquivos de `referencia/` ficam na pasta desta Skill. Abra cada um pelo caminho, com a ferramenta de leitura, sem depender de busca por arquivos: a pasta da Skill pode estar oculta e não aparecer na busca.
+
 ## Fontes do perfil
 
-**Não presuma memória nem arquivo.** No início de cada conversa, peça que o usuário **cole o perfil**: currículo ou texto do LinkedIn mais recente e, se quiser, casos reais de campo. Só vale o que ele colou ou disse nesta conversa. Se faltar algo decisivo (certificações NR em dia e validade, anos de experiência por segmento, pretensão salarial), pergunte uma vez. Se ele quiser reaproveitar o perfil em outras conversas, sugira que guarde o texto numa nota ou arquivo dele e cole de novo; a Skill só grava arquivo se o usuário pedir e se houver ferramenta para isso.
+**Não presuma memória nem arquivo.** No início de cada conversa, peça que o usuário **cole o perfil**: currículo ou texto do LinkedIn mais recente e, se quiser, casos reais de campo. Só vale o que ele colou ou disse nesta conversa. Se faltar algo decisivo (certificações NR em dia e validade, anos de experiência por segmento, pretensão salarial), pergunte uma vez, com no máximo 3 perguntas curtas. Não procure arquivo de perfil no computador sem o usuário indicar onde está. Se ele quiser reaproveitar o perfil em outras conversas, sugira que guarde o texto numa nota ou arquivo dele e cole de novo; a Skill só grava arquivo se o usuário pedir e se houver ferramenta para isso.
 
 **Norte do plano de carreira:** peça (e use só o que ele responder): cidade e raio aceitável; se estuda ou vai estudar (curso, turno, início); objetivos de 3 a 5 anos (ex.: engenharia de segurança, laudos, perícia, gestão); segmentos de interesse; regime aceito (CLT, PJ); pretensão salarial mínima. Se o perfil colado tiver mais de 6 meses, peça confirmação.
 
@@ -98,7 +100,7 @@ Cuidado com fontes de salário: descarte número incoerente (muito fora das dema
 
 ## Rastreador
 
-Manter uma tabela com: data, empresa, cargo, link, cidade, regime, salário, nota, status (avaliada, candidatou, entrevista, proposta, recusada, desistiu), próximo passo e data do próximo passo. Entregar como tabela em texto (Markdown) na conversa, para o usuário colar na ferramenta que ele usa (Excel, Google Sheets, Notion, caderno); se ele pedir um arquivo e houver ferramenta para isso, gerar .xlsx ou .csv. Não depende de Google Docs nem Sheets. A cada nova rodada, o usuário cola a tabela atual e a Skill devolve a versão atualizada. Sugerir acompanhamento 7 a 10 dias após a candidatura, se ele quiser.
+Manter uma tabela com: data, empresa, cargo, link, cidade, regime, salário, nota, status (avaliada, candidatou, entrevista, proposta, recusada, desistiu; "avaliada" só depois de a avaliação ter sido feita nesta conversa, senão "a avaliar"), próximo passo e data do próximo passo. Entregar como tabela em texto (Markdown) na conversa, para o usuário colar na ferramenta que ele usa (Excel, Google Sheets, Notion, caderno); se ele pedir um arquivo e houver ferramenta para isso, gerar .xlsx ou .csv. Não depende de Google Docs nem Sheets. A cada nova rodada, o usuário cola a tabela atual e a Skill devolve a versão atualizada. Sugerir acompanhamento 7 a 10 dias após a candidatura, se ele quiser.
 
 ## Idioma
 

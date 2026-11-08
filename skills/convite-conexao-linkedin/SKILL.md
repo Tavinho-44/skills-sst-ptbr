@@ -13,6 +13,8 @@ Use quando o usuário pedir "escreve um convite de conexão", "manda mensagem pr
 
 A nota do convite é curta. Neste material usa-se 200 caracteres como referência, mas ⚠️ a conferir no LinkedIn: o limite pode variar conforme o tipo de conta e mudar com o tempo. Pergunte ao usuário qual limite aparece na tela dele e use esse. A primeira mensagem decide se haverá uma segunda. Nenhuma das duas é pedido de emprego nem venda.
 
+Os arquivos de `referencia/` ficam na pasta desta Skill. Abra cada um pelo caminho, com a ferramenta de leitura, sem depender de busca por arquivos: a pasta da Skill pode estar oculta e não aparecer na busca.
+
 ## Antes de escrever, pegue o específico
 
 Pergunte, numa mensagem só:
@@ -20,7 +22,7 @@ Pergunte, numa mensagem só:
 1. **Quem**: cargo e empresa, e o nome só se o usuário quiser usar na saudação. Peça apenas o que a nota vai usar (minimização de dados de terceiros, `referencia/privacidade.md`); não peça telefone, e-mail pessoal nem detalhes da vida da pessoa.
 2. **O motivo de agora**: um post que a pessoa escreveu, algo que a empresa fez, um contato em comum, uma palestra, uma vaga publicada. "É da área" não é motivo. **Se o motivo for um post, peça que o usuário cole o texto do post** (ou o trecho). Sem o texto, não cite o que o post diz: a Skill não abre o link nem o LinkedIn, e escrever "li seu post sobre X" sem ver o post é inventar.
 3. **O que o usuário quer**: trocar experiência, uma indicação, uma vaga, um contato comercial. Seja honesto internamente, mesmo que a mensagem não comece por isso.
-4. **Quem o usuário é, nas palavras dele**: cargo e área que ele quer mostrar. Não presuma cidade, empresa, setor, tempo de experiência nem certificação.
+4. **Quem o usuário é, nas palavras dele**: cargo e área que ele quer mostrar. Não presuma cidade, empresa, setor, tempo de experiência nem certificação. Use as palavras dele: "1 ano de experiência" não vira "1 ano de obra".
 
 Se não houver motivo específico para falar com essa pessoa hoje, diga. Mensagem sem motivo é o que todo mundo manda, e é por isso que quase ninguém responde.
 
@@ -67,7 +69,7 @@ Depois disso, pare.
 
 ## Nunca
 
-- Nunca invente contato em comum, escola em comum ou ter lido algo que o usuário não leu.
+- Nunca invente contato em comum, escola em comum ou ter lido algo que o usuário não leu. Também não escreva que ele acompanha os posts ou conhece o trabalho da pessoa sem ele ter dito.
 - Nunca abra com "Espero que esta mensagem o encontre bem" ou "Prezado(a)".
 - Nunca envie convite ou mensagem, nem opere o navegador ou a conta do usuário para isso, mesmo que ele peça. Esta skill só escreve; quem envia é o usuário, pessoa por pessoa. Envio automatizado ou em massa conflita com os termos do LinkedIn (`referencia/linkedin-regras.md`, seção 1) e pode restringir a conta.
 - Nunca guarde nem repita dado pessoal de terceiros além do necessário para a nota (cargo, empresa, motivo).

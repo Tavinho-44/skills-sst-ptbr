@@ -10,6 +10,18 @@
 - `scripts/empacotar.py`: gera os ZIPs de `pacotes/` (estrutura `<skill>/...`, fim de linha LF, sem `__pycache__`, mesmo conteúdo gera o mesmo ZIP).
 
 ### Alterado
+- Fase 6, correções a partir dos testes (07 e 08/11/2026):
+  - **Todas as Skills com `referencia/`:** mandam abrir os arquivos pelo caminho, sem depender de busca por arquivos (a pasta da Skill pode estar oculta).
+  - **`comum/regras-de-fonte.md`:** a marca de origem é da conferência feita na conversa; marca copiada de arquivo da Skill ou do documento analisado, ou arquivo achado por busca e não indicado pelo usuário, não vale.
+  - **`revisao-tecnica-post-sst`:** a hierarquia de controles segue a ordem de prioridade da NR-01, item 1.4.1, alínea g; a escala de cinco degraus é boa prática.
+  - **`consulta-normas-sst`:** pedido de resposta "de cabeça" ou pronta para cliente não autoriza texto com item, prazo ou carga horária sem conferência.
+  - **`conferencia-documento-sst`:** data do documento já passada não é falha.
+  - **`humanizer-ptbr`:** verbo e termo técnico ficam como estão; nada de fato novo; a lista de mudanças só descreve o que mudou.
+  - **`convite-conexao-linkedin`:** usa as palavras do usuário sobre a experiência; não diz que ele acompanha a pessoa sem ele ter dito.
+  - **`comentarios-linkedin-sst`:** comentário ⚠️ não é "o que eu postaria"; não atribui ao usuário conhecimento da norma.
+  - **`respostas-comentarios-linkedin`:** não promete ação pelo usuário; não confirma causa de acidente em público.
+  - **`carreira-ops-tst`:** no máximo 3 perguntas, sem procurar arquivo no computador; status "avaliada" só após avaliar.
+  - **`calendario-editorial-sst`:** data informada pelo usuário sem fonte fica ⚠️ até ele passar a lei ou o link.
 - ZIPs de `pacotes/` regerados pelo script.
 - As 11 Skills (Fase 5, correções da auditoria):
   - **Regras comuns:** seguem a Regra A, com a marca de origem ✅/🌐/⚠️ e a data, e mandam ler as cópias de `referencia/`.

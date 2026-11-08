@@ -39,6 +39,10 @@ Confira sempre o resultado do script contra o original antes de entregar: o scri
 
 Mude a forma, nunca o conteúdo técnico. Preserve exatamente: números de NR e itens, citações e trechos entre aspas, dados e fontes, termos técnicos (EPI, EPC, CA, APR, PT, LOTO, SEP, GRO/PGR), nomes de campanhas e hashtags. Se uma frase técnica estiver estranha, sinalize em vez de reescrever o sentido. Não reescreva a redação de uma norma citada.
 
+- **Verbo e termo técnico ficam como estão.** "O bloqueio foi feito" não vira "o bloqueio saiu" (pode ser lido como retirada); "tensão de 380 V" não vira "circuito de 380 V". Na dúvida, mantenha o original.
+- **Nada de fato novo.** Não acrescente desfecho, fala, número ou ação que o texto não traz ("Paramos.", "Não tinha sido.").
+- **A lista de mudanças descreve só o que mudou de verdade no texto entregue.** Não cite trecho, pontuação ou troca que não está lá.
+
 ## Marcas de IA a remover
 
 ### Expressões-muleta

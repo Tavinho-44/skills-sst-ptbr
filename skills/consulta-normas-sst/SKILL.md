@@ -9,12 +9,15 @@ Use esta skill quando o usuário perguntar o que a legislação exige sobre um t
 
 Não use para redigir post, DDS, ata ou relatório de investigação. Essas tarefas têm skills próprias (se estiverem instaladas), que podem chamar esta para checar a base legal.
 
+Os arquivos de `referencia/` ficam na pasta desta Skill. Abra cada um pelo caminho, com a ferramenta de leitura, sem depender de busca por arquivos: a pasta da Skill pode estar oculta e não aparecer na busca.
+
 ## Regras de fonte e vigência
 
 Siga `referencia/regras-de-fonte.md` (Regra A) em toda citação, sem exceção:
 
 - Cada norma, item ou prazo leva a marca de origem: ✅ Base local, 🌐 Fonte oficial ou ⚠️ Não conferido, com a data.
 - Ordem de busca: base local do usuário (pasta, vault, PDF anexado), se existir; depois fonte oficial na web, se a busca na web estiver disponível nesta conversa; sem nenhuma das duas, **não responda de memória**: peça ao usuário o trecho da norma ou o PDF e marque ⚠️ enquanto isso.
+- **Pedido de resposta "de cabeça", sem marcação ou pronta para cliente não muda a regra.** Sem base conferida, não escreva texto pronto para terceiro com número de item, prazo ou carga horária. Diga o que diverge, com ⚠️, e entregue o texto para o cliente só depois da conferência.
 - Termos como "risco ocupacional", "PGR" e "acidente do trabalho" seguem `referencia/glossario-sst.md`.
 
 ## Passo 1 — Entender o caso e a data de referência
