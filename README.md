@@ -1,5 +1,7 @@
 # Skills de SST para o Claude (pt-BR)
 
+[![Validar](https://github.com/Tavinho-44/skills-sst-ptbr/actions/workflows/validar.yml/badge.svg)](https://github.com/Tavinho-44/skills-sst-ptbr/actions/workflows/validar.yml)
+
 Skills em português do Brasil para profissionais de **Segurança e Saúde no Trabalho**: consulta de normas pela hierarquia legal, conferência de documentos como um auditor faria, investigação de acidentes, roteiro de desenergização pela NR-10, permissão de trabalho, conteúdo técnico para o LinkedIn e uma central de carreira para TST.
 
 Funcionam no **app do Claude** (web, desktop e celular) e no **Claude Code**. Todas seguem o padrão aberto de Agent Skills (uma pasta com um `SKILL.md`).
@@ -85,6 +87,11 @@ As skills de normas funcionam direto com as fontes oficiais (gov.br/trabalho-e-e
 - NRs, portarias e prazos mudam. As skills mandam conferir a vigência, mas a conferência final é sua.
 - Nada de dados pessoais de trabalhadores em posts ou exemplos: as skills anonimizam por função e setor.
 - As skills de LinkedIn escrevem; quem publica é você. Automatizar comentários ou convites viola os termos do LinkedIn.
+- Instale só a partir deste repositório (github.com/Tavinho-44/skills-sst-ptbr). Cópias reenviadas por terceiros podem estar desatualizadas ou alteradas.
+
+## Manutenção
+
+A cada envio, o GitHub roda `scripts/validar.py` e o gitleaks (aba Actions). A checagem reprova Skill com frontmatter ou link quebrado, ZIP de `pacotes/` desatualizado, dado pessoal (CPF, CNPJ, celular, e-mail, caminho local) e chave ou senha no histórico. Para conferir antes de enviar: `python scripts/validar.py`.
 
 ## Créditos
 

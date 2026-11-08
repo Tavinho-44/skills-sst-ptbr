@@ -7,6 +7,9 @@
 - `permissao-de-trabalho`: PT de tarefa crítica nomeada (altura, espaço confinado com PET, trabalho a quente, escavação, içamento), com isolamento de energias, atividades simultâneas, resgate, validade e encerramento. Itens da NR-33, NR-35, NR-20, NR-18 e NR-01 conferidos no texto oficial baixado do MTE.
 - Marketplace em pacotes: `skills-sst` (completo, continua igual para quem já instalou), `sst-campo` e `sst-conteudo`. Os pacotes parciais listam as pastas das Skills no próprio `marketplace.json`.
 - `scripts/validar.py`: confere se cada pacote parcial aponta para Skills existentes, se as versões batem e se toda Skill está em algum pacote parcial.
+- `.github/workflows/validar.yml`: o GitHub roda a validação e o gitleaks (segredos no histórico) a cada envio e pull request; selo no README.
+- `scripts/validar.py`: dados proibidos agora incluem CNPJ, celular e e-mail.
+- README: aviso para instalar só do repositório oficial e seção de manutenção.
 - `comum/`: regras compartilhadas pelas Skills (`regras-de-fonte.md` com a Regra A, `privacidade.md`, `glossario-sst.md`, `linkedin-regras.md`) e `uso.json`, que diz quais arquivos cada Skill recebe.
 - `skills/<skill>/referencia/`: cópias de `comum/`, geradas por script. As Skills mandam ler esses arquivos desde a Fase 5.
 - `scripts/sincronizar_comum.py`: copia `comum/` para `referencia/` de cada Skill e confere se as cópias estão iguais.
@@ -16,6 +19,7 @@
 ### Alterado
 - `.claude-plugin/plugin.json` removido: a entrada do marketplace passa a ser o manifesto de cada pacote (nome, versão, autor e licença), para que `sst-campo` e `sst-conteudo` tenham nome próprio. Versão 1.1.0 nos três pacotes.
 - README: seção "Trabalho de campo" e instalação por pacote. `CREDITOS.md`: ideias adaptadas do hse-leadership-skills.
+- `scripts/empacotar.py` e `scripts/validar.py`: a conferência dos ZIPs compara o conteúdo (nomes, permissões e arquivos), não os bytes comprimidos. Antes, Python de versões ou sistemas diferentes acusava os 11 ZIPs como desatualizados mesmo com o conteúdo igual, e a checagem no GitHub reprovaria sempre.
 - Fase 6, correções a partir dos testes (07 e 08/11/2026):
   - **Todas as Skills com `referencia/`:** mandam abrir os arquivos pelo caminho, sem depender de busca por arquivos (a pasta da Skill pode estar oculta).
   - **`comum/regras-de-fonte.md`:** a marca de origem é da conferência feita na conversa; marca copiada de arquivo da Skill ou do documento analisado, ou arquivo achado por busca e não indicado pelo usuário, não vale.
@@ -48,6 +52,9 @@
   - **Windows:** lê e grava em UTF-8.
   - **Códigos de saída:** 0 quando roda e 2 em erro de uso.
 - `carreira-ops-tst`: recebe `privacidade.md`.
+- `investigacao-acidente-trabalho`: etapa de hipóteses concorrentes antes de fechar as causas (2 a 4 hipóteses, ao menos uma de método ou gestão, cada uma sustentada, descartada ou em aberto); resumo em Causas básicas e as em aberto em Limitações.
+- `conferencia-documento-sst`: a resposta abre com veredito (APTO, APTO COM RESSALVAS, NÃO APTO ou SEM VEREDITO) e uma linha por etapa.
+- CREDITOS: ideias adaptadas do affaan-m/ECC (MIT).
 
 ## 1.0.0
 
