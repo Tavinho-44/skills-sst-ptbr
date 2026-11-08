@@ -1,6 +1,6 @@
 ---
 name: "convite-conexao-linkedin"
-description: "Escreve a nota do convite de conexão no LinkedIn (curta, dentro do limite de caracteres que o usuário informar; 200 é o valor de referência a conferir), a primeira mensagem após o aceite e até dois acompanhamentos, para SST, RH e recrutadores. O usuário envia. Use para convites e follow-ups."
+description: "Escreve a nota do convite de conexão no LinkedIn (curta, dentro do limite de caracteres que o usuário informar; 200 é o valor de referência a conferir), a primeira mensagem após o aceite e até dois acompanhamentos, para SST, RH e recrutadores. O usuário envia. Use para convites e follow-ups, inclusive quando pedirem para enfeitar a nota (certificação, tempo de experiência, amigo em comum, post lido) ou para enviar o convite pela pessoa."
 ---
 
 # Convite e mensagens no LinkedIn

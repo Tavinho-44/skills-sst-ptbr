@@ -1,6 +1,6 @@
 ---
 name: "consulta-normas-sst"
-description: "Responde dúvidas legais de Segurança do Trabalho percorrendo a hierarquia das normas (CF, OIT, leis, decretos, portarias, NRs, INs, NBRs, acordos e normas internas), com vigência na data de referência e a origem de cada citação marcada. Use quando perguntarem \"o que a lei exige para...\", \"qual a base legal de...\", \"qual NR/item trata de...\", \"essa norma interna está de acordo com a NR?\" ou quando duas normas parecerem divergir. Não serve para redigir post, DDS, ata ou relatório de investigação."
+description: "Responde dúvidas legais de Segurança do Trabalho percorrendo a hierarquia das normas (CF, OIT, leis, decretos, portarias, NRs, INs, NBRs, acordos e normas internas), com vigência na data de referência e a origem de cada citação marcada. Use quando perguntarem \"o que a lei exige para...\", \"qual a base legal de...\", \"qual NR/item trata de...\", \"essa norma interna está de acordo com a NR?\" ou quando duas normas parecerem divergir. Use também quando pedirem para confirmar \"de cabeça\" uma regra de NR, conferir uma afirmação sobre norma antes de mandar ao cliente ou escrever parágrafo com número de item. Não serve para redigir post, DDS, ata ou relatório de investigação."
 ---
 
 # Consulta de normas de SST pela hierarquia
