@@ -29,7 +29,7 @@ Os arquivos de `referencia/` ficam na pasta desta Skill. Abra cada um pelo camin
 ## Entrada
 
 - O documento (.docx, .pdf ou texto colado). Numere os parágrafos como `[i]` e use esse número em todos os achados.
-- A **data de referência**: data do documento, do fato investigado ou da avaliação. É ela que decide qual redação vale. Se não estiver clara, pergunte ou use a data do documento e avise. Data do documento já passada em relação a hoje não é falha: confira na data de referência e, se quiser, avise numa linha, sem 🔴 e sem mudar o veredito.
+- A **data de referência**: data do documento, do fato investigado ou da avaliação. É ela que decide qual redação vale. Se não estiver clara, pergunte ou use a data do documento e avise. A data do próprio documento (emissão ou execução prevista) já ter passado em relação a hoje não é falha: confira na data de referência e, se quiser, avise numa linha, sem 🔴 e sem mudar o veredito. Prazo ou validade vencidos na data de referência (treinamento, ASO, revisão do PGR) continuam sendo achado.
 - O tipo de documento e a empresa ou atividade, se não estiverem óbvios.
 - **Documento grande:** trabalhe por blocos, mantendo a numeração, e diga no fim quais parágrafos foram lidos. **PDF escaneado ou sem texto legível:** não finja que leu; marque ⚠️, diga o que faltou e peça o texto (colado ou em PDF com texto).
 
