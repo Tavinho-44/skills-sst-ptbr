@@ -14,6 +14,8 @@ Regras comuns, que esta Skill segue sem repetir aqui (leia quando for usar):
 - `referencia/glossario-sst.md`: termos e vocabulário sem culpa presumida (seção 2).
 - `referencia/linkedin-regras.md`: o que pode e o que não pode em conteúdo público.
 
+Os arquivos de `referencia/` ficam na pasta desta Skill. Abra cada um pelo caminho, com a ferramenta de leitura, sem depender de busca por arquivos: a pasta da Skill pode estar oculta e não aparecer na busca.
+
 ## Perfil do autor
 
 Antes de revisar, saiba quem assina: profissão ou papel (por exemplo técnico, engenheiro, estudante, gestor, empresa), se o usuário informar. Não presuma. Se o texto afirma uma qualificação, atribuição ou experiência do autor que ele não informou, aponte para ele confirmar ou retirar. Ajuste o tom da revisão ao perfil informado; sem perfil, revise só o conteúdo.
@@ -41,7 +43,7 @@ Use a data de hoje (ou a de publicação prevista, se o usuário disser) e escre
 
 ### 3. Terminologia técnica
 - Confira o uso correto de: EPI x EPC; CA (Certificado de Aprovação) e validade; APR, PT, bloqueio e etiquetagem; GRO/PGR; SEP, zona controlada e zona de risco; espaço confinado; trabalho em altura. Para termos definidos em norma, use `referencia/glossario-sst.md` e, quando precisar citar a definição, confira o texto vigente pela Regra A.
-- Hierarquia de controles: eliminação, substituição, engenharia, administrativo, EPI por último.
+- Hierarquia de controles: a NR-01, item 1.4.1, alínea g, fixa a ordem de prioridade das medidas de prevenção: eliminação dos fatores de risco; proteção coletiva; medidas administrativas ou de organização do trabalho; proteção individual por último. Confira o texto vigente pela Regra A antes de citar. A escala de cinco degraus, com substituição e engenharia, é boa prática, não texto da NR-01.
 - Aponte termos usados de forma leiga ou imprecisa.
 
 ### 4. Segurança do próprio conteúdo

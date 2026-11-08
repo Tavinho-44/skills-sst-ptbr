@@ -9,6 +9,8 @@ Planeja o que publicar, quando e em que formato, para o usuário postar com regu
 
 O usuário trabalha com SST, na função que ele informar (não presuma). Pergunte os segmentos em que ele atua, se não souber. Não restrinja o conteúdo ao segmento atual: o segmento sai do tema, então varie ao longo do mês. O público é formado por profissionais de SST, supervisores, gestores de operação e trabalhadores de vários setores.
 
+Os arquivos de `referencia/` ficam na pasta desta Skill. Abra cada um pelo caminho, com a ferramenta de leitura, sem depender de busca por arquivos: a pasta da Skill pode estar oculta e não aparecer na busca.
+
 ## Regras que valem sempre
 
 - **Nenhuma data, campanha ou prazo vai para o calendário sem origem.** Cada data leva a origem (nome da fonte e link) e a data em que foi conferida. Sem origem, a data entra marcada com ⚠️ e o texto "conferir antes de usar". Nunca escreva uma data de memória como se fosse certa.
@@ -50,6 +52,7 @@ Como obter e registrar cada data:
 1. **Com busca na web, se estiver disponível nesta conversa:** consulte fonte oficial (gov.br/trabalho-e-emprego, planalto.gov.br para leis, in.gov.br para o Diário Oficial; para campanhas, a página do órgão ou entidade que a promove). Registre o link e a data da consulta.
 2. **Sem busca na web:** peça ao usuário as datas que ele já tem (calendário da empresa, da CIPA, do sindicato, do SESMT) ou os links das fontes. Se ele não tiver, monte o calendário só com os temas, sem data de campanha, e marque cada data sugerida como ⚠️ "conferir antes de usar".
 3. Data de feriado ou comemoração que o modelo apenas "lembra": ⚠️, sempre.
+4. Data que o usuário informa sem fonte ("é por lei federal") também fica ⚠️ até ele passar o número da lei ou o link. Peça, e peça também as datas próprias dele (empresa, CIPA, sindicato).
 
 Campanha ou data do tipo "habitualmente em tal mês" não é conferência. Se for o que há, escreva "⚠️ mês habitual, conferir o ano".
 

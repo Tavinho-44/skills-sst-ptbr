@@ -16,6 +16,8 @@ Método adaptado dos agentes `conferente-de-citacoes` e `revisor-adversario` do 
 
 **Aviso que vai em toda resposta:** esta conferência apoia o responsável técnico e não o substitui. A decisão, a assinatura e a responsabilidade pelo documento continuam com o profissional legalmente habilitado que o assina.
 
+Os arquivos de `referencia/` ficam na pasta desta Skill. Abra cada um pelo caminho, com a ferramenta de leitura, sem depender de busca por arquivos: a pasta da Skill pode estar oculta e não aparecer na busca.
+
 ## Regras que valem para as duas leituras
 
 - **Fonte e vigência:** siga `referencia/regras-de-fonte.md` (Regra A) em toda conferência. Cada citação leva a origem ✅ Base local, 🌐 Fonte oficial ou ⚠️ Não conferido, com a data. A ordem de busca é base local do usuário, depois fonte oficial na web (se a busca na web estiver disponível nesta conversa); sem nenhuma das duas, **não complete de memória**: peça ao usuário o trecho da norma ou o PDF e deixe ⚠️.
@@ -27,7 +29,7 @@ Método adaptado dos agentes `conferente-de-citacoes` e `revisor-adversario` do 
 ## Entrada
 
 - O documento (.docx, .pdf ou texto colado). Numere os parágrafos como `[i]` e use esse número em todos os achados.
-- A **data de referência**: data do documento, do fato investigado ou da avaliação. É ela que decide qual redação vale. Se não estiver clara, pergunte ou use a data do documento e avise.
+- A **data de referência**: data do documento, do fato investigado ou da avaliação. É ela que decide qual redação vale. Se não estiver clara, pergunte ou use a data do documento e avise. A data do próprio documento (emissão ou execução prevista) já ter passado em relação a hoje não é falha: confira na data de referência e, se quiser, avise numa linha, sem 🔴 e sem mudar o veredito. Prazo ou validade vencidos na data de referência (treinamento, ASO, revisão do PGR) continuam sendo achado.
 - O tipo de documento e a empresa ou atividade, se não estiverem óbvios.
 - **Documento grande:** trabalhe por blocos, mantendo a numeração, e diga no fim quais parágrafos foram lidos. **PDF escaneado ou sem texto legível:** não finja que leu; marque ⚠️, diga o que faltou e peça o texto (colado ou em PDF com texto).
 

@@ -42,6 +42,8 @@ Sites de consultoria, blogs, apostilas e versões comentadas servem só para ach
 
 Nunca trocar ⚠️ por ✅ ou 🌐 para a resposta parecer mais completa.
 
+A marca é da conferência feita nesta conversa. Marca e data que aparecem num arquivo da Skill, num exemplo ou no documento analisado (por exemplo, "🌐 ..., consultado em 02/11/2026") não se copiam: sem ler a fonte agora, a citação sai ⚠️. Base local é a base normativa do usuário (pasta, vault ou PDF dele). Arquivo que não é isso, como arquivo da própria Skill, exemplo ou anexo de outro trabalho, não vale como base local, mesmo que apareça numa busca.
+
 ## 4. Vigência e data de referência
 
 - Toda conferência tem uma **data de referência**: a data do fato, do documento ou da consulta. É ela que decide qual redação vale. Se o usuário não disser, perguntar ou usar a data de hoje e avisar.

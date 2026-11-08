@@ -9,6 +9,8 @@ O conteúdo que mais constrói autoridade em SST é a experiência real de quem 
 
 A Skill escreve. Quem publica é o usuário, na própria conta. A Skill nunca publica, agenda nem opera o navegador no LinkedIn.
 
+Os arquivos de `referencia/` ficam na pasta desta Skill. Abra cada um pelo caminho, com a ferramenta de leitura, sem depender de busca por arquivos: a pasta da Skill pode estar oculta e não aparecer na busca.
+
 ## Regras que valem em todos os passos
 
 Leia e siga estes arquivos da pasta `referencia/`:

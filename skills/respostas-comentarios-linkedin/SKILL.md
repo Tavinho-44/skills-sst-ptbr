@@ -13,6 +13,8 @@ Use quando o usuário colar os comentários de um post dele e pedir "responde es
 
 A conversa embaixo do post é onde o alcance se decide: cada resposta é uma nova interação, e responder cedo costuma ajudar (prática observada, não regra publicada pelo LinkedIn). Mas nem todo comentário vale o mesmo, então a skill separa antes de escrever.
 
+Os arquivos de `referencia/` ficam na pasta desta Skill. Abra cada um pelo caminho, com a ferramenta de leitura, sem depender de busca por arquivos: a pasta da Skill pode estar oculta e não aparecer na busca.
+
 ## Entrada
 
 O usuário cola os comentários, de preferência com a função da pessoa (nome só se ele quiser usar na resposta). Print serve. Não use o navegador para ler a conversa nem para responder: quem lê, copia e publica é o usuário.
@@ -41,6 +43,8 @@ Escreva nessa ordem e pare quando o valor acabar.
 - **Para crítica:** reconheça primeiro a parte verdadeira, com as palavras da pessoa, depois sustente o que você defende. Não apague, não fique na defensiva, não responda duas vezes na mesma conversa.
 - **Para correção técnica (Regra A):** antes de corrigir alguém em público, confira a norma segundo `referencia/regras-de-fonte.md` (base local, depois fonte oficial na web, se a busca estiver disponível; se não, peça ao usuário o trecho ou o PDF). Se a pessoa estiver certa, admita e agradeça. Se estiver errada e a citação for ✅ ou 🌐, cite o item com calma, com a data de referência. Com ⚠️ (não conferido), não corrija: escreva uma pergunta ("você viu em qual item?") ou deixe sem resposta. A Skill `consulta-normas-sst` ajuda na conferência, mas é opcional; sem ela, o caminho acima basta.
 - **Nunca afirme o que o usuário não informou.** Não escreva "aqui na minha obra", "já fiz isso", "uso um checklist", "te mando o modelo" nem número de experiência se ele não disse que é verdade e que tem o material. Falta informação: use `[confirmar: ...]` ou pergunte.
+- **Não prometa pelo usuário.** "Ajusto o post", "vou corrigir" ou "te mando amanhã" só com a decisão dele: `[confirmar: ...]`.
+- **Acidente, morte ou doença:** não confirme nem atribua causa em público ("é exatamente esse o risco"). Acolha, diga que causa se conhece pela investigação e não acrescente hipótese.
 - **Para oportunidade (vaga, recrutador, empresa):** responda bem em público e feche com uma frase de abertura ("se quiser, conversamos por mensagem"; oferecer material, como "te mando o modelo", só se o usuário confirmar que tem: `[confirmar: ...]`), nunca com um discurso de venda ou um currículo colado.
 - **Para propaganda:** ignore. Responder dá alcance a ela.
 - **Nunca exponha** empresa, cliente ou colega identificável ao comentar caso de acidente (`referencia/privacidade.md`).
