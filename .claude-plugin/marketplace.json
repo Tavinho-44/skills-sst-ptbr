@@ -1,12 +1,51 @@
 {
   "name": "skills-sst-ptbr",
+  "description": "Skills em português para Segurança e Saúde no Trabalho: pacote completo ou separado em trabalho de campo e conteúdo.",
   "owner": { "name": "Luiz Gustavo Gomes da Costa" },
   "plugins": [
     {
       "name": "skills-sst",
-      "description": "Skills em português para Segurança e Saúde no Trabalho: normas, conferência de documentos, investigação de acidentes, LinkedIn e carreira de TST.",
-      "version": "1.0.0",
+      "description": "Pacote completo: normas, conferência de documentos, investigação de acidentes, desenergização NR-10, permissão de trabalho, LinkedIn e carreira de TST.",
+      "version": "1.1.0",
+      "author": { "name": "Luiz Gustavo Gomes da Costa" },
+      "license": "MIT",
+      "keywords": ["sst", "seguranca-do-trabalho", "nr", "linkedin", "pt-br"],
       "source": "./"
+    },
+    {
+      "name": "sst-campo",
+      "description": "Trabalho de campo em SST: consulta de normas, conferência de documentos, investigação de acidentes, desenergização NR-10 e permissão de trabalho.",
+      "version": "1.1.0",
+      "author": { "name": "Luiz Gustavo Gomes da Costa" },
+      "license": "MIT",
+      "keywords": ["sst", "seguranca-do-trabalho", "nr", "nr-10", "permissao-de-trabalho", "pt-br"],
+      "source": "./",
+      "skills": [
+        "./skills/consulta-normas-sst",
+        "./skills/conferencia-documento-sst",
+        "./skills/investigacao-acidente-trabalho",
+        "./skills/programa-desenergizacao-nr10",
+        "./skills/permissao-de-trabalho"
+      ]
+    },
+    {
+      "name": "sst-conteudo",
+      "description": "Conteúdo e carreira em SST: revisão técnica de post, caso de campo, humanizer, calendário editorial, comentários, respostas, convites no LinkedIn e carreira de TST.",
+      "version": "1.1.0",
+      "author": { "name": "Luiz Gustavo Gomes da Costa" },
+      "license": "MIT",
+      "keywords": ["sst", "seguranca-do-trabalho", "linkedin", "carreira", "pt-br"],
+      "source": "./",
+      "skills": [
+        "./skills/revisao-tecnica-post-sst",
+        "./skills/caso-de-campo-para-post",
+        "./skills/humanizer-ptbr",
+        "./skills/calendario-editorial-sst",
+        "./skills/comentarios-linkedin-sst",
+        "./skills/respostas-comentarios-linkedin",
+        "./skills/convite-conexao-linkedin",
+        "./skills/carreira-ops-tst"
+      ]
     }
   ]
 }

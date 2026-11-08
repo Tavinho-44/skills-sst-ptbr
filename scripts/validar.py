@@ -14,6 +14,7 @@ Só usa a biblioteca padrão do Python.
 
 import argparse
 import io
+import json
 import re
 import sys
 import zipfile
@@ -28,6 +29,7 @@ RAIZ = Path(__file__).resolve().parent.parent
 SKILLS = RAIZ / "skills"
 COMUM = RAIZ / "comum"
 PACOTES = RAIZ / "pacotes"
+MARKETPLACE = RAIZ / ".claude-plugin" / "marketplace.json"
 
 MARCADOR_PREMIUM = empacotar.MARCADOR_PREMIUM
 PASTAS_PREMIUM = empacotar.PASTAS_PREMIUM
@@ -237,6 +239,34 @@ def validar_readme(nomes_skills, r):
             r.aviso("README.md", f"Skill '{nome}' não aparece na lista do README")
 
 
+def validar_marketplace(nomes_skills, r):
+    """Pacotes do marketplace: caminhos existentes, mesma versão e toda Skill num pacote parcial."""
+    onde = rel(MARKETPLACE)
+    try:
+        dados = json.loads(ler(MARKETPLACE))
+    except (OSError, ValueError) as erro:
+        r.erro(onde, f"não foi possível ler: {erro}")
+        return
+    plugins = dados.get("plugins", [])
+    versoes = {p.get("version") for p in plugins}
+    if len(versoes) > 1:
+        r.aviso(onde, f"pacotes com versões diferentes: {sorted(map(str, versoes))}")
+    em_parciais = set()
+    for plugin in plugins:
+        caminhos = plugin.get("skills")
+        if caminhos is None:
+            continue
+        for caminho in caminhos:
+            pasta = (RAIZ / caminho).resolve()
+            if not (pasta / "SKILL.md").is_file():
+                r.erro(onde, f"pacote '{plugin.get('name')}' aponta para '{caminho}', que não tem SKILL.md")
+            elif pasta.parent == SKILLS.resolve():
+                em_parciais.add(pasta.name)
+    if any("skills" in p for p in plugins):
+        for nome in sorted(nomes_skills - em_parciais):
+            r.aviso(onde, f"Skill '{nome}' não está em nenhum pacote parcial (sst-campo, sst-conteudo)")
+
+
 def validar_pacotes(nomes_skills, r):
     for nome in sorted(nomes_skills):
         zip_atual = PACOTES / f"{nome}.zip"
@@ -284,6 +314,7 @@ def main():
     validar_dados_proibidos(r)
     validar_barreira_premium(r)
     validar_readme(nomes_skills, r)
+    validar_marketplace(nomes_skills, r)
     if not args.sem_pacotes:
         validar_pacotes(nomes_skills, r)
 
