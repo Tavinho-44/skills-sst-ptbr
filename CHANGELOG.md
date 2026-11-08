@@ -3,6 +3,9 @@
 ## Não lançado
 
 ### Adicionado
+- `.github/workflows/validar.yml`: o GitHub roda a validação e o gitleaks (segredos no histórico) a cada envio e pull request; selo no README.
+- `scripts/validar.py`: dados proibidos agora incluem CNPJ, celular e e-mail.
+- README: aviso para instalar só do repositório oficial e seção de manutenção.
 - `comum/`: regras compartilhadas pelas Skills (`regras-de-fonte.md` com a Regra A, `privacidade.md`, `glossario-sst.md`, `linkedin-regras.md`) e `uso.json`, que diz quais arquivos cada Skill recebe.
 - `skills/<skill>/referencia/`: cópias de `comum/`, geradas por script. As Skills ainda não mandam ler esses arquivos; isso entra na próxima versão.
 - `scripts/sincronizar_comum.py`: copia `comum/` para `referencia/` de cada Skill e confere se as cópias estão iguais.
@@ -10,6 +13,7 @@
 - `scripts/empacotar.py`: gera os ZIPs de `pacotes/` (estrutura `<skill>/...`, fim de linha LF, sem `__pycache__`, mesmo conteúdo gera o mesmo ZIP).
 
 ### Alterado
+- `scripts/empacotar.py` e `scripts/validar.py`: a conferência dos ZIPs compara o conteúdo (nomes, permissões e arquivos), não os bytes comprimidos. Antes, Python de versões ou sistemas diferentes acusava os 11 ZIPs como desatualizados mesmo com o conteúdo igual, e a checagem no GitHub reprovaria sempre.
 - Fase 6, correções a partir dos testes (07 e 08/11/2026):
   - **Todas as Skills com `referencia/`:** mandam abrir os arquivos pelo caminho, sem depender de busca por arquivos (a pasta da Skill pode estar oculta).
   - **`comum/regras-de-fonte.md`:** a marca de origem é da conferência feita na conversa; marca copiada de arquivo da Skill ou do documento analisado, ou arquivo achado por busca e não indicado pelo usuário, não vale.
@@ -42,6 +46,9 @@
   - **Windows:** lê e grava em UTF-8.
   - **Códigos de saída:** 0 quando roda e 2 em erro de uso.
 - `carreira-ops-tst`: recebe `privacidade.md`.
+- `investigacao-acidente-trabalho`: etapa de hipóteses concorrentes antes de fechar as causas (2 a 4 hipóteses, ao menos uma de método ou gestão, cada uma sustentada, descartada ou em aberto); resumo em Causas básicas e as em aberto em Limitações.
+- `conferencia-documento-sst`: a resposta abre com veredito (APTO, APTO COM RESSALVAS, NÃO APTO ou SEM VEREDITO) e uma linha por etapa.
+- CREDITOS: ideias adaptadas do affaan-m/ECC (MIT).
 
 ## 1.0.0
 

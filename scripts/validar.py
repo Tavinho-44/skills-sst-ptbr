@@ -41,6 +41,10 @@ DADOS_PROIBIDOS = [
     (re.compile(r"[A-Za-z]:\\Users\\", re.IGNORECASE), "caminho local do Windows (C:\\Users\\...)"),
     (re.compile(r"(?<![\w.])/(?:Users|home)/[A-Za-z0-9_.-]+/"), "caminho local de usuário (/Users/ ou /home/)"),
     (re.compile(r"\bCCR\b"), "nome de empresa do autor (CCR)"),
+    (re.compile(r"\b\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}\b"), "número no formato de CNPJ"),
+    (re.compile(r"\(?\b[1-9]{2}\)?[ .-]?9[ .]?\d{4}[ .-]?\d{4}\b"), "número no formato de celular"),
+    (re.compile(r"\b[A-Za-z0-9._%+-]+@(?!example\.|exemplo\.|users\.noreply\.)[A-Za-z0-9-]+\.[A-Za-z.]{2,}\b"),
+     "endereço de e-mail"),
 ]
 
 # Pendências de conteúdo apontadas na auditoria da Fase 2.
@@ -240,7 +244,7 @@ def validar_pacotes(nomes_skills, r):
             r.erro(rel(zip_atual), "ZIP ausente (rode python scripts/empacotar.py)")
             continue
         esperado = empacotar.gerar_zip(SKILLS / nome)
-        if zip_atual.read_bytes() != esperado:
+        if not empacotar.mesmo_conteudo(zip_atual.read_bytes(), esperado):
             r.erro(rel(zip_atual), "ZIP diferente da pasta da Skill (rode python scripts/empacotar.py)")
         for problema in empacotar.problemas_do_zip(zip_atual.read_bytes(), nome):
             r.erro(rel(zip_atual), problema)
