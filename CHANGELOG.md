@@ -1,15 +1,21 @@
 # Mudanças
 
-## Não lançado
+## 1.1.0 (não lançada)
 
 ### Adicionado
+- `programa-desenergizacao-nr10`: roteiro de desenergização e reenergização de um equipamento nomeado e justificativa de trabalho energizado, com a tabela de itens da redação atual da NR-10 e da nova redação (Portaria MTE nº 737/2026). Itens conferidos no texto oficial baixado do MTE.
+- `permissao-de-trabalho`: PT de tarefa crítica nomeada (altura, espaço confinado com PET, trabalho a quente, escavação, içamento), com isolamento de energias, atividades simultâneas, resgate, validade e encerramento. Itens da NR-33, NR-35, NR-20, NR-18 e NR-01 conferidos no texto oficial baixado do MTE.
+- Marketplace em pacotes: `skills-sst` (completo, continua igual para quem já instalou), `sst-campo` e `sst-conteudo`. Os pacotes parciais listam as pastas das Skills no próprio `marketplace.json`.
+- `scripts/validar.py`: confere se cada pacote parcial aponta para Skills existentes, se as versões batem e se toda Skill está em algum pacote parcial.
 - `comum/`: regras compartilhadas pelas Skills (`regras-de-fonte.md` com a Regra A, `privacidade.md`, `glossario-sst.md`, `linkedin-regras.md`) e `uso.json`, que diz quais arquivos cada Skill recebe.
-- `skills/<skill>/referencia/`: cópias de `comum/`, geradas por script. As Skills ainda não mandam ler esses arquivos; isso entra na próxima versão.
+- `skills/<skill>/referencia/`: cópias de `comum/`, geradas por script. As Skills mandam ler esses arquivos desde a Fase 5.
 - `scripts/sincronizar_comum.py`: copia `comum/` para `referencia/` de cada Skill e confere se as cópias estão iguais.
 - `scripts/validar.py`: confere frontmatter, links internos, cópias de `comum/`, ZIPs, dados proibidos (CPF, caminhos locais) e conteúdo da edição Premium; lista como aviso as pendências de conteúdo conhecidas.
 - `scripts/empacotar.py`: gera os ZIPs de `pacotes/` (estrutura `<skill>/...`, fim de linha LF, sem `__pycache__`, mesmo conteúdo gera o mesmo ZIP).
 
 ### Alterado
+- `.claude-plugin/plugin.json` removido: a entrada do marketplace passa a ser o manifesto de cada pacote (nome, versão, autor e licença), para que `sst-campo` e `sst-conteudo` tenham nome próprio. Versão 1.1.0 nos três pacotes.
+- README: seção "Trabalho de campo" e instalação por pacote. `CREDITOS.md`: ideias adaptadas do hse-leadership-skills.
 - Fase 6, correções a partir dos testes (07 e 08/11/2026):
   - **Todas as Skills com `referencia/`:** mandam abrir os arquivos pelo caminho, sem depender de busca por arquivos (a pasta da Skill pode estar oculta).
   - **`comum/regras-de-fonte.md`:** a marca de origem é da conferência feita na conversa; marca copiada de arquivo da Skill ou do documento analisado, ou arquivo achado por busca e não indicado pelo usuário, não vale.

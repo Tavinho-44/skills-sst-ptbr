@@ -1,6 +1,6 @@
 # Skills de SST para o Claude (pt-BR)
 
-Skills em português do Brasil para profissionais de **Segurança e Saúde no Trabalho**: consulta de normas pela hierarquia legal, conferência de documentos como um auditor faria, investigação de acidentes, conteúdo técnico para o LinkedIn e uma central de carreira para TST.
+Skills em português do Brasil para profissionais de **Segurança e Saúde no Trabalho**: consulta de normas pela hierarquia legal, conferência de documentos como um auditor faria, investigação de acidentes, roteiro de desenergização pela NR-10, permissão de trabalho, conteúdo técnico para o LinkedIn e uma central de carreira para TST.
 
 Funcionam no **app do Claude** (web, desktop e celular) e no **Claude Code**. Todas seguem o padrão aberto de Agent Skills (uma pasta com um `SKILL.md`).
 
@@ -15,6 +15,15 @@ Funcionam no **app do Claude** (web, desktop e celular) e no **Claude Code**. To
 | [consulta-normas-sst](skills/consulta-normas-sst/SKILL.md) | Responde dúvidas legais de SST percorrendo a hierarquia: CF, convenções da OIT, leis, decretos, portarias, NRs, INs, NBRs e normas internas. Separa obrigação legal de boa prática e informa as fontes. |
 | [conferencia-documento-sst](skills/conferencia-documento-sst/SKILL.md) | Duas leituras de um documento pronto (PGR, laudo, OS, procedimento, investigação): confere cada citação (existe, diz isso, está vigente na data?) e faz revisão adversária com quatro olhares: fiscal do trabalho, perito, quem executa em campo e acabamento. |
 | [investigacao-acidente-trabalho](skills/investigacao-acidente-trabalho/SKILL.md) | Transforma um relato bruto de acidente em relatório técnico de investigação em Word, com 5 Porquês e 5M, separando fato, evidência e hipótese. |
+
+### Trabalho de campo
+
+| Skill | O que faz |
+|---|---|
+| [programa-desenergizacao-nr10](skills/programa-desenergizacao-nr10/SKILL.md) | Monta o roteiro de desenergização e reenergização (programa de manobra) de um equipamento nomeado, na sequência da NR-10, e a justificativa quando alguém propõe trabalho energizado. Separa a liberação para trabalhar da energização para teste e diz qual redação da NR-10 usou (a atual ou a nova). |
+| [permissao-de-trabalho](skills/permissao-de-trabalho/SKILL.md) | Monta a PT de uma tarefa crítica nomeada (altura, espaço confinado com PET, trabalho a quente, escavação, içamento), com isolamento de energias, coordenação de atividades simultâneas, resgate, validade e encerramento. |
+
+As duas entrevistam com uma pergunta por vez, recusam pedido vago ("a subestação", "manutenção geral") e marcam `[LACUNA]` em vez de inventar ponto de seccionamento, limite de medição ou energia incidente. Entregam rascunho em Markdown (ou Word, se pedir); quem libera o serviço é o responsável da empresa.
 
 ### Conteúdo para o LinkedIn
 
@@ -44,12 +53,21 @@ Funcionam no **app do Claude** (web, desktop e celular) e no **Claude Code**. To
 
 ### No Claude Code
 
-Todas de uma vez, como plugin:
+Primeiro adicione o marketplace:
 
 ```
 /plugin marketplace add Tavinho-44/skills-sst-ptbr
-/plugin install skills-sst@skills-sst-ptbr
 ```
+
+Depois instale **um** dos pacotes:
+
+| Pacote | O que traz | Comando |
+|---|---|---|
+| `skills-sst` | Todas as Skills | `/plugin install skills-sst@skills-sst-ptbr` |
+| `sst-campo` | Normas, conferência de documentos, investigação de acidentes, desenergização NR-10 e permissão de trabalho | `/plugin install sst-campo@skills-sst-ptbr` |
+| `sst-conteudo` | Revisão de post, caso de campo, humanizer, calendário editorial, comentários, respostas, convites e carreira | `/plugin install sst-conteudo@skills-sst-ptbr` |
+
+Quem já instalou o `skills-sst` não precisa mudar nada. Não instale o `skills-sst` junto com um pacote parcial: as Skills apareceriam duas vezes. Os dois parciais juntos equivalem ao completo.
 
 Ou só uma, copiando a pasta para a sua pasta de skills:
 
