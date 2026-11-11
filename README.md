@@ -43,7 +43,10 @@ As duas entrevistam com uma pergunta por vez, recusam pedido vago ("a subestaç�
 
 | Skill | O que faz |
 |---|---|
+| [perfil-linkedin-sst](skills/perfil-linkedin-sst/SKILL.md) | Dá uma nota de 0 a 100 ao perfil do LinkedIn de quem trabalha com SST, em 10 dimensões, e reescreve o que perde pontos: título, Sobre, experiências, destaques e banner. Não inventa número nem certificação; o que falta fica marcado para você preencher. |
 | [carreira-ops-tst](skills/carreira-ops-tst/SKILL.md) | Avalia vagas de SST com nota de 1 a 5 conforme o seu plano de carreira, busca vagas em portais brasileiros (só lendo, nunca se candidata sozinha), adapta currículo sem inventar nada, prepara entrevista e mantém um panorama do mercado de TST com fontes (CAGED, MTE, Observatório de SST). |
+
+Para outras profissões, ou para o trabalho completo de posicionamento (pesquisa de mercado, referências, estratégia e plano de 90 dias), existe a skill linkedin-professional-intelligence, em repositório próprio, ainda não publicado. Ela usa as mesmas 10 dimensões da perfil-linkedin-sst.
 
 ## Como instalar
 
