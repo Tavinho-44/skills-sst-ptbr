@@ -11,7 +11,7 @@ Regras comuns: siga `referencia/linkedin-regras.md` (a Skill escreve, o usuário
 
 Perfil não é currículo. O currículo responde "o que você já fez". O perfil responde, em uns quatro segundos, "vale a pena chamar essa pessoa?", a partir do título e das duas primeiras linhas do Sobre. E, para quem busca oportunidade, ele também precisa ser encontrado: recrutadores buscam por termos como "Técnico em Segurança do Trabalho", "NR-10", "NR-35", "SESMT", e esses termos têm que estar no título e nas experiências.
 
-Esta skill faz a nota e a reescrita. Para o trabalho completo (mercado, referências, posicionamento, plano de 90 dias), existe a skill linkedin-professional-intelligence, no repositório github.com/Tavinho-44/linkedin-professional-intelligence; as duas usam as mesmas 10 dimensões e os mesmos pesos, então a nota de uma vale na outra.
+Esta skill faz a nota e a reescrita. Para o trabalho completo (mercado, referências, posicionamento, plano de 90 dias), existe a skill linkedin-professional-intelligence (repositório próprio, ainda não publicado); as duas usam as mesmas 10 dimensões e os mesmos pesos, então a nota de uma vale na outra.
 
 ## Entrada
 
