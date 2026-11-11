@@ -3,6 +3,7 @@
 ## 1.1.0 (não lançada)
 
 ### Adicionado
+- `perfil-linkedin-sst`: nota de 0 a 100 e reescrita do perfil do LinkedIn de profissional de SST. A rubrica tem 10 dimensões com os mesmos pesos da coluna "Emprego" da skill linkedin-professional-intelligence (repositório próprio), para a nota de uma valer na outra; no teste com a mesma persona, a diferença foi de 2 pontos. Entra no pacote `sst-conteudo`. O README aponta para o repositório novo.
 - `programa-desenergizacao-nr10`: roteiro de desenergização e reenergização de um equipamento nomeado e justificativa de trabalho energizado, com a tabela de itens da redação atual da NR-10 e da nova redação (Portaria MTE nº 737/2026). Itens conferidos no texto oficial baixado do MTE.
 - `permissao-de-trabalho`: PT de tarefa crítica nomeada (altura, espaço confinado com PET, trabalho a quente, escavação, içamento), com isolamento de energias, atividades simultâneas, resgate, validade e encerramento. Itens da NR-33, NR-35, NR-20, NR-18 e NR-01 conferidos no texto oficial baixado do MTE.
 - Marketplace em pacotes: `skills-sst` (completo, continua igual para quem já instalou), `sst-campo` e `sst-conteudo`. Os pacotes parciais listam as pastas das Skills no próprio `marketplace.json`.

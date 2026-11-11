@@ -44,6 +44,7 @@
         "./skills/comentarios-linkedin-sst",
         "./skills/respostas-comentarios-linkedin",
         "./skills/convite-conexao-linkedin",
+        "./skills/perfil-linkedin-sst",
         "./skills/carreira-ops-tst"
       ]
     }
